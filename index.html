@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Geneva, Summer or Snow</title>
+<meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1A21" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --lake:#1F5673; --glacier:#DCEAF0; --red:#C8102E; --gold:#D9A520; --pine:#36584A;
+  --page:#F7F6F2; --surface:#FFFFFF; --ink:#1D2329; --ink-soft:#5B6670; --rule:#D9DDDF;
+  --link:#1F5673; --headline:#14212B; --pill:#36584A; --accent-text:#1F5673;
+  --display:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --shadow:0 8px 26px rgba(20,33,43,.10);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#0F1A21; --surface:#17252E; --ink:#E6ECEF; --ink-soft:#A7B4BC; --rule:#2B3C47;
+    --link:#9CCBE3; --headline:#F2F5F7; --glacier:#1E3442; --red:#E2475E; --gold:#E7BE4E;
+    --pill:#4F7A66; --accent-text:#9CCBE3; --shadow:0 8px 26px rgba(0,0,0,.45); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0F1A21; --surface:#17252E; --ink:#E6ECEF; --ink-soft:#A7B4BC; --rule:#2B3C47;
+  --link:#9CCBE3; --headline:#F2F5F7; --glacier:#1E3442; --red:#E2475E; --gold:#E7BE4E;
+  --pill:#4F7A66; --accent-text:#9CCBE3; --shadow:0 8px 26px rgba(0,0,0,.45); color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{min-height:100%;background:#F7F6F2;background:var(--page,#F7F6F2)}
+body{margin:0;min-height:100%;background:#F7F6F2;background:var(--page,#F7F6F2);
+  color:#1D2329;color:var(--ink,#1D2329);font-family:Georgia,serif;font-family:var(--body);
+  font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+@media (prefers-color-scheme:dark){
+  html:not([data-theme="light"]){background:#0F1A21}
+  html:not([data-theme="light"]) body{background:#0F1A21;color:#E6ECEF}
+}
+html[data-theme="dark"]{background:#0F1A21}
+html[data-theme="dark"] body{background:#0F1A21;color:#E6ECEF}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--display);color:var(--headline);margin:0;text-wrap:balance;line-height:1.05}
+a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--red)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:20px}
+.prose{max-width:36em}
+.prose p{margin:0 0 1em}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:#14212B}
+.hero img{width:100%;height:clamp(360px,64vh,640px);object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,20,28,.10) 0%,rgba(10,20,28,.20) 45%,rgba(10,20,28,.82) 100%)}
+.hero-copy{position:absolute;inset-inline:0;bottom:0;z-index:2;padding:0 20px 34px;max-width:1100px;margin:0 auto;color:#fff}
+.hero-copy h1{color:#fff;font-size:clamp(3.6rem,13vw,8.6rem);font-weight:800;font-stretch:125%;
+  font-variation-settings:"wdth" 125;letter-spacing:-.02em;line-height:.9}
+.hero-sub{font-family:var(--display);font-weight:500;font-size:clamp(1rem,2.6vw,1.35rem);
+  letter-spacing:.02em;margin-top:.8rem;color:#EAF2F6}
+.hero-sub b{color:#fff;font-weight:700}
+.hero-bar{display:block;width:64px;height:6px;background:var(--red);margin-bottom:1rem}
+
+section{padding-block:clamp(1.8rem,4vw,3rem)}
+.kicker{font-family:var(--display);font-weight:700;font-size:.92rem;color:var(--red);
+  letter-spacing:.04em;margin:0 0 .4rem}
+h2{font-size:clamp(2.1rem,5.4vw,3.4rem);font-weight:800;font-stretch:118%;
+  font-variation-settings:"wdth" 118;letter-spacing:-.015em}
+h2 + .sub{font-family:var(--body);font-style:italic;color:var(--ink-soft);margin:.7rem 0 0;max-width:38em;font-size:1.05rem}
+.section-head{margin-bottom:2rem;border-top:3px solid var(--headline);padding-top:1.1rem}
+.lede{font-size:1.2em;line-height:1.58}
+.note{background:var(--glacier);border-left:4px solid var(--lake);padding:.95rem 1.1rem;margin:1rem 0;font-size:.98rem}
+.note b{color:var(--headline)}
+.warn{border-left-color:var(--red)}
+
+/* season switch */
+.season{display:inline-flex;border:2px solid var(--headline);margin:1.4rem 0 .4rem}
+.season button{font-family:var(--display);font-weight:700;font-size:1rem;letter-spacing:.01em;
+  padding:.62rem 1.05rem;border:0;background:transparent;color:var(--headline);cursor:pointer}
+.season button+button{border-left:2px solid var(--headline)}
+.season button[aria-pressed="true"]{background:var(--headline);color:var(--page)}
+.season-hint{font-size:.92rem;color:var(--ink-soft);margin:0}
+html.js [data-season="winter"]{display:none}
+html.js.show-winter [data-season="winter"]{display:block}
+html.js.show-winter [data-season="summer"]{display:none}
+
+/* itinerary */
+.days{display:flex;flex-direction:column;gap:clamp(2rem,4.5vw,3.2rem)}
+.day{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(1.2rem,3vw,2.4rem);align-items:start}
+.day figure{margin:0}
+.day figure img{width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow)}
+figcaption{font-family:var(--display);font-size:.84rem;color:var(--ink-soft);padding-top:.45rem;line-height:1.4}
+.day:nth-child(even) figure{order:2}
+.day--solo{grid-template-columns:1fr}
+.day--solo>div{max-width:36em}
+.day-num{font-family:var(--display);font-weight:800;font-size:2.6rem;font-stretch:125%;
+  font-variation-settings:"wdth" 125;color:var(--red);line-height:1;margin:0 0 .3rem}
+.day-num small{font-size:.9rem;font-weight:600;color:var(--ink-soft);letter-spacing:.02em;margin-left:.5rem;font-stretch:100%}
+.day h3{font-size:clamp(1.5rem,3.6vw,2rem);font-weight:700;margin-bottom:.55rem}
+.day p{margin:0 0 .8rem}
+.kid{border-left:3px solid var(--pine);padding-left:.85rem;color:var(--ink-soft);font-size:.97rem}
+.kid b{color:var(--pine);font-family:var(--display)}
+
+/* bands */
+.band{margin:0}
+.band img{width:100%;height:clamp(200px,34vw,400px);object-fit:cover}
+.band figcaption{max-width:1100px;margin:0 auto;padding:.5rem 20px 0}
+
+/* facts grid */
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:0}
+.fact{background:var(--surface);padding:1rem 1.1rem;border:1px solid var(--rule);margin:0 -1px -1px 0}
+.fact h4{font-size:1.05rem;font-weight:700;margin-bottom:.35rem}
+.fact p{margin:0;font-size:.97rem}
+.fact .src{font-size:.82rem;color:var(--ink-soft);margin-top:.4rem;display:block}
+
+/* hotels */
+.hotels{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem}
+.hotel{background:var(--surface);border:1px solid var(--rule);display:flex;flex-direction:column}
+.hotel-img{width:100%;aspect-ratio:3/2;object-fit:cover;background:var(--rule)}
+.hotel-body{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+.hotel h4{font-size:1.32rem;font-weight:700}
+.hotel h4 a{color:var(--headline);text-decoration:none}
+.hotel .meta{font-size:.93rem;color:var(--ink-soft);margin:0}
+.hotel .rate{font-family:var(--display);font-weight:700;font-size:1.15rem;color:var(--accent-text);margin:0;font-variant-numeric:tabular-nums}
+.hotel .rate span{font-weight:500;font-size:.88rem;color:var(--ink-soft)}
+.hotel p{margin:0;font-size:.97rem}
+.pick{border:2px solid var(--red)}
+.pick-flag{align-self:flex-start;background:var(--red);color:#fff;font-family:var(--display);font-weight:700;font-size:.82rem;letter-spacing:.04em;padding:.22rem .6rem}
+.badges{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}
+
+/* pills */
+.score-pill,.walkpill{display:inline-block;font-family:var(--display);font-weight:600;font-size:.82rem;
+  padding:.1rem .55rem;border-radius:999px;white-space:nowrap;font-variant-numeric:tabular-nums;text-decoration:none}
+a.score-pill{background:var(--pill);color:#fff}
+a.score-pill:hover{background:var(--red);color:#fff}
+.walkpill.many{background:#1F5673;color:#fff}
+.walkpill.few{background:var(--gold);color:#1D2329}
+.walkpill.none{border:1px solid var(--red);color:var(--red)}
+.tag{display:inline-block;font-family:var(--display);font-size:.76rem;font-weight:700;letter-spacing:.03em;
+  padding:.08rem .45rem;border:1px solid var(--ink-soft);color:var(--ink-soft)}
+.tag.sun{border-color:var(--red);color:var(--red)}
+
+/* city heads + spots */
+.city-head{font-family:var(--display);font-weight:700;font-size:1.35rem;color:var(--accent-text);
+  margin:2.4rem 0 .9rem;display:flex;align-items:center;gap:.8rem}
+.city-head::after{content:"";flex:1;height:1px;background:var(--rule)}
+.spot{padding:.8rem 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.25rem 1rem;align-items:baseline}
+.spot:last-of-type{border-bottom:1px solid var(--rule)}
+.spot .name{font-family:var(--display);font-weight:700;font-size:1.12rem;color:var(--headline)}
+.spot .name a{color:var(--headline)}
+.spot .why{grid-column:1/-1;margin:0;font-size:.98rem}
+.spot .addr{color:var(--ink-soft);font-style:italic}
+.photo-duo{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin:0 0 1.2rem}
+.photo-duo figure{margin:0}
+.photo-duo img{width:100%;aspect-ratio:3/2;object-fit:cover}
+
+/* options */
+.options{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 2.4rem}
+.opt{padding:.55rem 0;border-top:1px solid var(--rule)}
+.opt-n{font-family:var(--display);font-weight:700;font-size:1.08rem;color:var(--headline);display:block}
+.opt-n a{color:var(--headline)}
+.opt-w{font-size:.95rem;color:var(--ink-soft);display:block;margin-top:.1rem}
+
+/* tables */
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);background:var(--surface);margin:.6rem 0}
+table{border-collapse:collapse;width:100%;min-width:540px;font-size:.96rem}
+th,td{padding:.62rem .8rem;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:var(--display);font-weight:700;color:#fff;background:var(--headline)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) th{color:#0F1A21}}
+:root[data-theme="dark"] th{color:#0F1A21}
+tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* map link */
+.maplink{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:700;
+  background:var(--red);color:#fff;text-decoration:none;padding:.6rem 1rem;margin-top:1rem}
+.maplink:hover{background:var(--headline);color:var(--page)}
+
+/* resources */
+.res{background:var(--surface);border:1px solid var(--rule);padding:1.3rem 1.4rem}
+.res h3{font-size:1.15rem;margin:1.2rem 0 .4rem}
+.res h3:first-child{margin-top:0}
+.res ul{margin:0;padding-left:1.1rem}
+.res li{margin-bottom:.3rem;font-size:.95rem}
+.credits{font-size:.84rem;color:var(--ink-soft);line-height:1.5}
+
+footer{padding:3rem 20px 4.5rem;border-top:3px solid var(--headline);text-align:left;max-width:1100px;margin:0 auto}
+footer .sign{font-family:var(--display);font-weight:800;font-size:2.2rem;font-stretch:125%;
+  font-variation-settings:"wdth" 125;color:var(--red);display:block}
+footer p{color:var(--ink-soft);margin:.2rem 0 0}
+
+/* music */
+.player{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:50}
+.player-btn{display:inline-flex;align-items:center;gap:.45rem;cursor:pointer;font-family:var(--display);
+  font-weight:700;font-size:.95rem;color:#fff;background:#14212B;border:2px solid var(--red);
+  padding:.48rem .95rem;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.player-btn[aria-pressed="true"]{background:var(--red)}
+
+@media (max-width:760px){
+  body{font-size:17.5px}
+  .day{grid-template-columns:1fr}
+  .day:nth-child(even) figure{order:0}
+  .spot{grid-template-columns:1fr}
+  .options{grid-template-columns:1fr}
+}
+@media (max-width:560px){ .photo-duo{grid-template-columns:1fr} .season button{padding:.55rem .7rem;font-size:.92rem} }
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<script>
+(function(){
+  var root=document.documentElement; root.classList.add('js');
+  function set(s){
+    root.classList.toggle('show-winter', s==='winter');
+    document.querySelectorAll('.season button').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-s')===s)); });
+  }
+  if(location.hash==='#winter') set('winter');
+  document.addEventListener('click',function(e){
+    var b=e.target.closest && e.target.closest('.season button'); if(!b) return;
+    set(b.getAttribute('data-s'));
+    try{ history.replaceState(null,'', b.getAttribute('data-s')==='winter' ? '#winter' : '#summer'); }catch(err){}
+  });
+  window.addEventListener('hashchange',function(){ set(location.hash==='#winter'?'winter':'summer'); });
+})();
+</script>
+</head>
+<body>
+<header class="hero">
+  <img src="img/hero.jpg" alt="The Jet d'Eau fountain in Geneva with a rainbow in its spray">
+  <div class="hero-copy">
+    <span class="hero-bar"></span>
+    <h1>Geneva</h1>
+    <p class="hero-sub"><b>Summer on the lake</b> &middot; or snow in December &middot; with a day at CERN</p>
+  </div>
+</header>
+
+<section class="wrap" id="intro">
+  <div class="prose lede">
+    <p class="kicker">A week, two ways</p>
+    <p>One city, two very different trips. In July, Geneva is a lake town: swimming off the jetties,
+      little boats across the harbour that cost nothing with the hotel's transport card, and light until
+      half past nine. In December it is cheese and chocolate and Christmas lights, dark by five, with the
+      Alps close enough for one day of learning to ski.</p>
+    <p>Both weeks include a day at CERN. Both are planned around a kid five and under, which mostly means
+      parks, boats, one big thing a day, and lunch as the main meal.</p>
+  </div>
+  <div class="season" role="group" aria-label="Choose a season">
+    <button type="button" data-s="summer" aria-pressed="true">Summer &middot; July</button>
+    <button type="button" data-s="winter" aria-pressed="false">Early winter &middot; December</button>
+  </div>
+  <p class="season-hint">Switching changes the week below and adds the ski day.</p>
+  <p><a class="maplink" href="map/">See all of it on a map</a></p>
+</section>
+
+<section class="wrap" id="week">
+  <div class="section-head" data-season="summer">
+    <p class="kicker">Summer &middot; July</p>
+    <h2>The week by the lake</h2>
+    <p class="sub">Highs around 27&deg;C, about fifteen and a half hours of daylight, and the busiest month of the year &mdash; which mostly shows on the waterfront.</p>
+  </div>
+  <div class="days" data-season="summer">
+    <article class="day day--solo"><div>
+      <p class="day-num">01</p><h3>Out of LAX, overnight</h3>
+      <p>There is no nonstop to Geneva. The quickest one-stop in our search was SWISS through Zurich at about thirteen hours door to gate; Lufthansa through Munich or Frankfurt is close behind.</p>
+    </div></article>
+    <article class="day">
+      <figure><img src="img/alps.jpg" alt="Mont Blanc and the Alps seen across Lake Geneva" loading="lazy"><figcaption>On a clear evening, Mont Blanc from the quay.</figcaption></figure>
+      <div><p class="day-num">02</p><h3>Land, seven minutes, done</h3>
+      <p>The airport train reaches Cornavin in seven minutes, and the free Geneva Transport Card &mdash; emailed by the hotel about three days before we arrive &mdash; covers it. Check in, walk to the water, watch the Jet d'Eau, find the flower clock. Early dinner, early night.</p>
+      <p class="kid"><b>With a small one:</b> the yellow Mouettes water taxis cross the harbour in minutes, free with the card. Most toddlers consider this the whole holiday.</p></div>
+    </article>
+    <article class="day">
+      <figure><img src="img/paquis.jpg" alt="The Bains des Pâquis jetty and lighthouse on Lake Geneva" loading="lazy"><figcaption>The Bains des Pâquis jetty and its lighthouse.</figcaption></figure>
+      <div><p class="day-num">03</p><h3>A lake day</h3>
+      <p>Morning at Parc La Grange: a playground with sand and a paddling pool, the rose garden, and Baby-Plage next door &mdash; a free little beach with showers and toilets. Back for a nap. Evening at the Bains des Pâquis, the old bathing jetty, for dinner at the buvette.</p>
+      <p class="kid"><b>With a small one:</b> the Pâquis is deep water off pebbles, not a paddling spot. Baby-Plage and the park pools are the toddler swims.</p></div>
+    </article>
+    <article class="day">
+      <figure><img src="img/cern-gateway.jpg" alt="The entrance to CERN Science Gateway" loading="lazy"><figcaption>CERN Science Gateway, twenty-five minutes by tram.</figcaption></figure>
+      <div><p class="day-num">04</p><h3>CERN</h3>
+      <p>Tram 18 to Meyrin, CERN. Science Gateway opens at nine, is free, and is closed on Mondays &mdash; so this is any day but a Monday. Two hours in the exhibitions, lunch at the Big Bang Caf&eacute; or a picnic on the lawn, back by mid-afternoon. Full details in the CERN section below.</p>
+      <p class="kid"><b>With a small one:</b> nothing there is programmed for under-fours, but the halls are hands-on and pushchair-friendly. Treat it as a wander, not a tour.</p></div>
+    </article>
+    <article class="day">
+      <figure><img src="img/steamer.jpg" alt="The CGN paddle steamer Savoie moored in Geneva" loading="lazy"><figcaption>The Belle &Eacute;poque paddle steamer <em>Savoie</em>, moored in Geneva.</figcaption></figure>
+      <div><p class="day-num">05</p><h3>The lake by paddle steamer</h3>
+      <p>CGN still runs Belle &Eacute;poque paddle steamers out of Geneva, and a family pass is planned for summer 2027. Under-sixes ride free. Or take the train an hour up the lake to Lavaux, the UNESCO vineyard terraces, and come back along the water.</p>
+      <p class="kid"><b>With a small one:</b> you can watch the paddle wheels and the engine room working. Budget time for staring.</p></div>
+    </article>
+    <article class="day">
+      <figure><img src="img/cathedral.jpg" alt="The neoclassical portico of St Pierre Cathedral in Geneva" loading="lazy"><figcaption>St Pierre Cathedral, at the top of the old town.</figcaption></figure>
+      <div><p class="day-num">06</p><h3>Old town and Carouge</h3>
+      <p>Up through the old town to St Pierre &mdash; the towers are 157 steps and CHF&nbsp;7 for adults &mdash; then down to Parc des Bastions for the playground and the giant chess boards. Fondue lunch at Les Armures. In the afternoon, tram to Carouge, the Italianate town next door. On Thursday to Sunday evenings in July, the free open-air cinema by the lake.</p>
+      <p class="kid"><b>With a small one:</b> old-town cobbles and the Bastions stairs are hard work with a pushchair. Bring the carrier for this one.</p></div>
+    </article>
+    <article class="day day--solo"><div>
+      <p class="day-num">07</p><h3>Home</h3>
+      <p>Seven minutes to the airport. The station shops open even on Sundays, for the last chocolate.</p>
+    </div></article>
+  </div>
+
+  <div class="section-head" data-season="winter">
+    <p class="kicker">Early winter &middot; December</p>
+    <h2>The week in the cold</h2>
+    <p class="sub">Highs around 6&deg;C, under nine hours of daylight and about forty-nine hours of sun in the whole month. Cosy, quiet, and close to the snow.</p>
+  </div>
+  <div data-season="winter">
+    <p class="note"><b>When in December.</b> The first half is the sweet spot: before the French school holidays (from 18 December 2027),
+      before CERN's Christmas closures (last winter: no tours from 23 December to 5 January), and while the Christmas market is on.
+      The catch is that early December is also when ski snow is least reliable. We picked mid-December and kept the ski day movable.
+      <a href="https://www.ge.ch/vacances-scolaires-jours-feries/vacances-scolaires-2027-2028" target="_blank" rel="noopener">Geneva school holidays</a></p>
+  </div>
+  <div class="days" data-season="winter">
+    <article class="day day--solo"><div>
+      <p class="day-num">01</p><h3>Out of LAX, overnight</h3>
+      <p>Same routes as summer. December 2027 flights were not on sale yet when we checked &mdash; see Getting there.</p>
+    </div></article>
+    <article class="day">
+      <figure><img src="img/snow.jpg" alt="Snow on the trees beside the Rhône in Geneva on an overcast day" loading="lazy"><figcaption>Geneva in December is grey more often than white. This is the white version.</figcaption></figure>
+      <div><p class="day-num">02</p><h3>Land, and go straight to the market</h3>
+      <p>Seven minutes into town on the free transport card. Then Noël au Quai, the Christmas market on the lakefront: last year it ran from 19 November to 24 December, with a children's village, an ice rink and a Ferris wheel. The Jet d'Eau runs 10:00 to 16:00 in December, if the wind allows.</p>
+      <p class="kid"><b>With a small one:</b> the bise, the north-east wind down the lake, is the cold you actually feel. Hats that tie on.</p></div>
+    </article>
+    <article class="day">
+      <figure><img src="img/fondue.jpg" alt="A red pot of cheese fondue with bread" loading="lazy"><figcaption>This is the weather fondue was invented for.</figcaption></figure>
+      <div><p class="day-num">03</p><h3>Old town and fondue</h3>
+      <p>Up to St Pierre and Maison Tavel, the old town's oldest house, which is pay-what-you-wish and warm inside &mdash; it has a huge model of Geneva in 1850 to peer at. Fondue lunch &mdash; Caf&eacute; du Soleil or Les Armures. A chocolate stop on the way down: most shops are closed on Sundays, so do this on a weekday.</p>
+      <p class="kid"><b>With a small one:</b> Les Armures has a full suit of armour standing in the dining room.</p></div>
+    </article>
+    <article class="day">
+      <figure><img src="img/marmite.jpg" alt="Chocolate Escalade cauldrons in a lit shop window" loading="lazy"><figcaption>Chocolate marmites in a Geneva shop window at Escalade.</figcaption></figure>
+      <div><p class="day-num">04</p><h3>Escalade weekend</h3>
+      <p>Every December Geneva celebrates the night of 11 to 12 December 1602, when the Duke of Savoy's troops tried to climb the city walls and were thrown back. Costumed processions with torches through the old town, mulled wine, and chocolate cauldrons &mdash; <em>marmites</em> &mdash; in every chocolate shop window. Last year it ran 11 to 13 December. The 2027 dates are not out yet; the weekend of 10 to 12 December is our guess.
+        <a href="https://www.geneve.com/fr/evenements/la-fete-de-lescalade-2026" target="_blank" rel="noopener">Geneva Tourism</a></p>
+      <p class="kid"><b>With a small one:</b> a chocolate cauldron is an excellent bribe for the walk back down the hill.</p></div>
+    </article>
+    <article class="day">
+      <figure><img src="img/cern-gateway.jpg" alt="The entrance to CERN Science Gateway" loading="lazy"><figcaption>CERN Science Gateway, twenty-five minutes by tram.</figcaption></figure>
+      <div><p class="day-num">05</p><h3>CERN</h3>
+      <p>Warm, free and indoors, which in December counts double. It is open on Sundays, when it runs the most shows and workshops, and closed on Mondays. Tram 18 from Cornavin.</p>
+      <p class="kid"><b>With a small one:</b> free lockers for the coats, lifts everywhere, baby-changing.</p></div>
+    </article>
+    <article class="day">
+      <figure><img src="img/ski-beginners.jpg" alt="A covered magic-carpet lift on a beginners' ski slope" loading="lazy"><figcaption>A covered magic carpet on a beginners' slope. This one is in Valloire, France.</figcaption></figure>
+      <div><p class="day-num">06</p><h3>The ski day</h3>
+      <p>The 07:05 train to Aigle, the bus up to Villars-Gryon, a family lesson in the village by ten. Practise on the free conveyor slopes, or take the cog railway up to Bretaye if the village snow is thin. Sledge if skiing is not happening. Back in Geneva for dinner. Everything is in the ski section below.</p>
+      <p class="kid"><b>With a small one:</b> the ski school takes children from three. Short, with breaks, and a sledge as the backup plan.</p></div>
+    </article>
+    <article class="day day--solo"><div>
+      <p class="day-num">07</p><h3>Home</h3>
+      <p>Seven minutes to the airport, a box of marmites in the hand luggage.</p>
+    </div></article>
+  </div>
+</section>
+
+<section class="wrap" id="cern">
+  <div class="section-head">
+    <p class="kicker">Both seasons</p>
+    <h2>A day at CERN</h2>
+    <p class="sub">The home of the Large Hadron Collider is twenty-five minutes from the old town by tram, it costs nothing, and its new science centre was built for curious people of every size.</p>
+  </div>
+  <figure class="band" style="margin-bottom:1.4rem">
+    <img src="img/cern-globe.jpg" alt="The wooden Globe of Science and Innovation at CERN behind a row of flags" loading="lazy">
+    <figcaption>The Globe of Science and Innovation, across the road from the tram stop.</figcaption>
+  </figure>
+  <div class="prose">
+    <p>CERN Science Gateway opened in October 2023: a Renzo Piano building of glass tubes and a
+      solar-panel canopy, paid for entirely by donations. Inside are three exhibitions &mdash;
+      <em>Discover CERN</em>, <em>Our Universe</em> and <em>Quantum World</em> &mdash; plus labs, shows and a caf&eacute;.</p>
+  </div>
+  <div class="note warn"><b>One honest thing before you go: you will not see the collider itself.</b>
+    The LHC is a 27&nbsp;km ring a hundred metres underground, and CERN's own visitor FAQ says its tunnel
+    is never open to visitors. It is also switched off right now: the last beams ran on 27 June 2026 and the
+    machine is in a planned upgrade until around mid-2030, which covers both of our trip windows. What you
+    do get is the <em>Discover CERN</em> exhibition &mdash; a full-scale recreation of the tunnel and a
+    virtual-reality walk through it.
+    <a href="https://home.cern/science/long-shutdown-3/" target="_blank" rel="noopener">CERN on the shutdown</a> &middot;
+    <a href="https://visit.cern/index.php/faq" target="_blank" rel="noopener">visitor FAQ</a></div>
+  <div class="facts">
+    <div class="fact"><h4>Free, but register</h4><p>Exhibitions, shows, labs and tours are all free. You still register, and booking online up to a month ahead guarantees entry.</p>
+      <span class="src"><a href="https://visit.cern/index.php/faq" target="_blank" rel="noopener">visit.cern FAQ</a></span></div>
+    <div class="fact"><h4>Closed Mondays</h4><p>Tuesday to Sunday, 9:00&ndash;17:00, last entry 16:30. Last winter it closed on 24, 25 and 31 December and 1 January, with no tours from 23 December to 5 January; 2027 dates are not out yet.</p>
+      <span class="src"><a href="https://visit.cern/hours" target="_blank" rel="noopener">visit.cern/hours</a></span></div>
+    <div class="fact"><h4>Getting there</h4><p>Tram 18 from Cornavin to <em>Meyrin, CERN</em>, about 25 minutes. It is inside fare zone 10, so the free Geneva Transport Card covers it.</p>
+      <span class="src"><a href="https://visit.cern/index.php/getting-here" target="_blank" rel="noopener">visit.cern: getting here</a></span></div>
+    <div class="fact"><h4>With a small one</h4><p>Pushchair-friendly throughout, with lifts, baby-changing and 321 free lockers. No large bags. The exhibitions are officially rated 8+ and tours 12&ndash;14+, so nothing is programmed for under-fours &mdash; but the halls welcome visitors of all ages, so plan a hands-on wander rather than a tour.</p>
+      <span class="src"><a href="https://visit.cern/index.php/accessibility" target="_blank" rel="noopener">accessibility</a> &middot; <a href="https://visit.cern/index.php/families-individual-visitors" target="_blank" rel="noopener">families</a></span></div>
+    <div class="fact"><h4>Lunch</h4><p>The Big Bang Caf&eacute; does sandwiches and salads all day and burgers from 11:00 to 15:00, roughly CHF&nbsp;15&ndash;30. Or picnic on the lawn beside it.</p>
+      <span class="src"><a href="https://visit.cern/index.php/big-bang-cafe" target="_blank" rel="noopener">Big Bang Caf&eacute;</a></span></div>
+    <div class="fact"><h4>How long</h4><p>Allow one and a half to three hours. Guided tours and labs can only be booked on site that day &mdash; tours open two hours before they start &mdash; and only about one visitor in ten gets a place.</p>
+      <span class="src"><a href="https://visit.cern/index.php/faq" target="_blank" rel="noopener">visit.cern FAQ</a></span></div>
+  </div>
+  <div class="photo-duo" style="margin-top:1.4rem">
+    <figure><img src="img/cern-gateway.jpg" alt="The entrance to CERN Science Gateway under its solar-panel canopy" loading="lazy"><figcaption>Science Gateway's entrance, under the solar canopy.</figcaption></figure>
+    <figure><img src="img/cern-bridge.jpg" alt="The glass bridge and accelerator-shaped tubes of CERN Science Gateway" loading="lazy"><figcaption>The glass bridge between the tubes, shaped like accelerator sections.</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap" id="ski" data-season="winter">
+  <div class="section-head">
+    <p class="kicker">Early winter only</p>
+    <h2>Learning to ski in a day</h2>
+    <p class="sub">None of us ski, and that is the point of doing it this way: one good day on snow with a teacher, from a hotel we never have to leave. Not a ski holiday.</p>
+  </div>
+  <figure class="band" style="margin-bottom:1.4rem">
+    <img src="img/villars-train.jpg" alt="The red Bex-Villars-Bretaye cog railway crossing snowy ski slopes near Col de Bretaye" loading="lazy">
+    <figcaption>The cog railway from Villars up to Bretaye, at about 1,800 m &mdash; the higher, safer snow.</figcaption>
+  </figure>
+  <div class="prose">
+    <p><b>Where: Villars-Gryon</b>, in the Vaud Alps at the far end of the lake. It was the only beginner-friendly
+      resort of the three we compared that was due to open in early December, it needs no border crossing, and the
+      train does it: Geneva 07:05, change at Aigle for bus 144, Villars at 08:58. Back at 16:34, in Geneva for 18:35.
+      Under-sixes ride free.</p>
+  </div>
+  <div class="facts">
+    <div class="fact"><h4>The lesson</h4><p>A private lesson with the Swiss Ski School in Villars is CHF&nbsp;80 an hour plus CHF&nbsp;10 for each extra person, and they take children from age three. So the whole family, together, is about CHF&nbsp;100 an hour. Ask for it in the village.</p>
+      <span class="src"><a href="https://ess-villars.ch/fr/cours/cours-prive-ski/" target="_blank" rel="noopener">ESS Villars</a></span></div>
+    <div class="fact"><h4>Practising for free</h4><p>There are free conveyor-lift practice areas in the village and at Gryon, so between lessons nobody needs a lift pass. Last season children born in 2021 or later skied free.</p>
+      <span class="src"><a href="https://www.skiresort.com/en/ski-resort/villars-gryon-les-diablerets/test-result/families-children/" target="_blank" rel="noopener">skiresort.com</a></span></div>
+    <div class="fact"><h4>The small one</h4><p>The ski school's snow garden takes ages three to six, at most six children per group for three- and four-year-olds, helmets compulsory, with childcare before and after. But it is only sold in packs of three half-days (CHF&nbsp;185) with five days' notice. For a single day, the family private lesson is the realistic choice.</p>
+      <span class="src"><a href="https://ess-villars.ch/fr/cours/jardin-des-neiges/" target="_blank" rel="noopener">Jardin des Neiges</a></span></div>
+    <div class="fact"><h4>If skiing isn't working</h4><p>Sledge instead. The Col de Soud run is about 1.6&nbsp;km through the woods back to the village, described as suitable for children with supervision. The cog railway day pass is CHF&nbsp;36, or CHF&nbsp;18 for a child. There is also a free sledging slope with its own conveyor.</p>
+      <span class="src"><a href="https://www.tvgd.ch/en-US/villars/" target="_blank" rel="noopener">Villars tourism</a></span></div>
+    <div class="fact"><h4>The snow risk</h4><p>Villars village sits at about 1,300&nbsp;m, which is low for December; Bretaye, at about 1,800&nbsp;m, is the safer snow. A 2022 study of sixteen Savoie resorts found snowmaking has not offset falling reliability at lower resorts. Keep the ski day movable.</p>
+      <span class="src"><a href="https://tc.copernicus.org/articles/16/863/2022/" target="_blank" rel="noopener">The Cryosphere, 2022</a></span></div>
+    <div class="fact"><h4>Gear</h4><p>Skis, boots and helmets rent in the village. We could not find a one-day rental price for Villars, so budget for it separately rather than trust a guess.</p></div>
+  </div>
+  <h3 class="city-head">The three we compared</h3>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th scope="col">Resort</th><th scope="col">Getting there</th><th scope="col">Height</th><th scope="col">For small children</th><th scope="col">The catch</th></tr></thead>
+      <tbody>
+        <tr><td><b>Villars-Gryon</b><br>Switzerland</td><td>Train and bus, 1h53</td><td>1,300&ndash;1,800&nbsp;m</td><td>Private lessons from age 3; family lesson about CHF&nbsp;100 an hour</td><td>Low village; go up to Bretaye</td></tr>
+        <tr><td><b>Flaine</b><br>France</td><td>Weekend ski bus from Geneva airport, 07:15&ndash;09:30</td><td>1,500&ndash;2,500&nbsp;m</td><td>Kids' club sold only as six-day weeks</td><td>Passports, euros, weekends only</td></tr>
+        <tr><td><b>Les Houches</b><br>France</td><td>Train only, about two hours</td><td>1,000&ndash;1,900&nbsp;m</td><td>Single Sunday toddler sessions, &euro;23&ndash;40</td><td>Opened 19 December last season; first Sunday train arrives 09:53</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Every price and date here is from the 2026/27 season, checked on 8 October 2026. The 2027/28 season has not been published. Sources:
+    <a href="https://www.flaine.com/en/a-family-friendly-resort/" target="_blank" rel="noopener">Flaine</a>,
+    <a href="https://eba-eurobus.com/en/winter-regular-line/geneva-flaine" target="_blank" rel="noopener">EBA ski bus</a>,
+    <a href="https://www.esf-leshouches.com/petits/club-pioupiou-3-4-ans/" target="_blank" rel="noopener">ESF Les Houches</a>,
+    <a href="https://en.chamonix.com/le-ski-aux-houches" target="_blank" rel="noopener">Chamonix tourism</a>.</p>
+</section>
+
+<section class="wrap" id="hotels">
+<div class="section-head"><p class="kicker">Both seasons</p><h2>Where we would stay</h2><p class="sub">Six options, from a lakefront splurge to an aparthotel with a kitchen. Every hotel guest gets the Geneva Transport Card free, so trams, trains and the little lake boats cost nothing. Rates are what Expedia quoted for the dates shown, in US dollars, per night for two adults and a child.</p></div>
+<div class="hotels">
+<article class="hotel"><img class="hotel-img" src="img/h-lareserve-room.jpg" alt="A jungle-themed children&#x27;s room in a family suite" loading="lazy"><div class="hotel-body"><h4><a href="https://www.lareserve-geneve.com/en/" target="_blank" rel="noopener">La Réserve Genève</a></h4><p class="meta">Bellevue (lakefront, ~6 km north of the centre)</p><p class="rate">$1,810<span> a night &middot; quoted for 12&ndash;15 July 2027</span></p><div class="badges"><span class="walkpill none">0 within a 10-min walk</span><a class="score-pill" href="https://www.tripadvisor.com/Hotel_Review-g1190139-d228195-Reviews-La_Reserve_Hotel_Spa_And_Villa-Bellevue_Geneva.html" target="_blank" rel="noopener" title="4.6 out of 5 from 1,131 Tripadvisor reviews">4.6</a></div><p>A free kids' club from six months to twelve years, every day 9:00&ndash;18:00. Connecting family rooms, children's rooms at half price, indoor and outdoor pools, a lakeside park and a boat into town. The catch: it is six kilometres out of the centre, in Bellevue.</p></div></article>
+<article class="hotel pick"><img class="hotel-img" src="img/h-eastwest-room.jpg" alt="The duplex suite with a spiral staircase to the bedroom" loading="lazy"><div class="hotel-body"><span class="pick-flag">THE ONE I WOULD PICK</span><h4><a href="https://www.eastwesthotel.ch/en/" target="_blank" rel="noopener">Eastwest Hotel by Malone</a></h4><p class="meta">Pâquis (between Cornavin station and the lake)</p><p class="rate">$397<span> a night &middot; quoted for 12&ndash;15 July 2027</span></p><div class="badges"><span class="walkpill many">11 within a 10-min walk</span><a class="score-pill" href="https://www.tripadvisor.com/Hotel_Review-g188057-d817240-Reviews-Eastwest_Hotel_By_Malone-Geneva.html" target="_blank" rel="noopener" title="4.5 out of 5 from 1,305 Tripadvisor reviews">4.5</a></div><p>The duplex suite is 53&nbsp;m&sup2; for four: bedroom upstairs, living room and sofa bed below, so naps and grown-up time happen on different floors. A minute from the lake, and it hands guests the transport pass itself.</p></div></article>
+<article class="hotel"><img class="hotel-img" src="img/h-edelweiss-lobby.jpg" alt="The chalet-style lobby with a fireplace" loading="lazy"><div class="hotel-body"><h4><a href="https://www.hoteledelweissgeneva.com/en/" target="_blank" rel="noopener">Hotel Edelweiss</a></h4><p class="meta">Pâquis (near the lake, Place de la Navigation)</p><p class="rate">$369<span> a night &middot; quoted for 13&ndash;16 December 2027</span></p><div class="badges"><span class="walkpill many">9 within a 10-min walk</span><a class="score-pill" href="https://www.tripadvisor.com/Hotel_Review-g188057-d228211-Reviews-Hotel_Edelweiss-Geneva.html" target="_blank" rel="noopener" title="4.1 out of 5 from 986 Tripadvisor reviews">4.1</a></div><p>A chalet in the middle of the city, by the lake. The family connecting room is two 23&nbsp;m&sup2; rooms, each with its own bathroom; cots on request for under-threes. The fondue restaurant downstairs is on our list too.</p></div></article>
+<article class="hotel"><img class="hotel-img" src="img/h-novotel-exterior.jpg" alt="The entrance of the Novotel Genève Centre" loading="lazy"><div class="hotel-body"><h4><a href="https://all.accor.com/hotel/3133/index.en.shtml" target="_blank" rel="noopener">Novotel Genève Centre</a></h4><p class="meta">Pâquis (≈300 m from Cornavin station)</p><p class="rate">$519<span> a night &middot; quoted for 12&ndash;15 July 2027</span></p><div class="badges"><span class="walkpill many">8 within a 10-min walk</span><a class="score-pill" href="https://www.tripadvisor.com/Hotel_Review-g188057-d497890-Reviews-Novotel_Geneve_Centre-Geneva.html" target="_blank" rel="noopener" title="3.7 out of 5 from 1,758 Tripadvisor reviews">3.7</a></div><p>Predictable and practical: a family room with two double beds for up to four, three hundred metres from Cornavin station, trams at the door.</p></div></article>
+<article class="hotel"><img class="hotel-img" src="img/h-kooook-room.jpg" alt="A family studio with a bunk bed and kitchenette" loading="lazy"><div class="hotel-body"><h4><a href="https://www.staykooook.com/geneva-city/" target="_blank" rel="noopener">Stay KooooK Geneva City</a></h4><p class="meta">Servette / Les Grottes (north-west of Cornavin)</p><p class="rate">$407<span> a night &middot; quoted for 12&ndash;15 July 2027</span></p><div class="badges"><span class="walkpill none">0 within a 10-min walk</span><a class="score-pill" href="https://www.tripadvisor.com/Hotel_Review-g188057-d27429602-Reviews-Stay_KooooK_Genf_City-Geneva.html" target="_blank" rel="noopener" title="4.8 out of 5 from 14 Tripadvisor reviews">4.8</a></div><p>Aparthotel studios with a queen bed, a bunk bed and a kitchenette &mdash; which with a small child is worth more than a minibar. Tram 18 to CERN stops a minute away. Check-in is by app, with no staffed desk.</p></div></article>
+<article class="hotel"><img class="hotel-img" src="img/h-ibislac-room.jpg" alt="A standard room at the ibis Genève Centre Lac" loading="lazy"><div class="hotel-body"><h4><a href="https://all.accor.com/hotel/9577/index.en.shtml" target="_blank" rel="noopener">ibis Genève Centre Lac</a></h4><p class="meta">Pâquis (≈5 min walk to Cornavin and the lake)</p><p class="rate"><span>No published 2027 rate found yet</span></p><div class="badges"><span class="walkpill many">9 within a 10-min walk</span><a class="score-pill" href="https://www.tripadvisor.com/Hotel_Review-g188057-d11917162-Reviews-Ibis_Geneve_Centre_Lac-Geneva.html" target="_blank" rel="noopener" title="3.9 out of 5 from 399 Tripadvisor reviews">3.9</a></div><p>The value option that is still central: 30&nbsp;m&sup2; rooms for four with a double and two singles, five minutes from the station and the lake. Transport pass included.</p></div></article>
+</div>
+<p class="note"><b>About Pâquis.</b> Four of these six are in Pâquis, between the station and the lake &mdash; central, lively, full of cheap good food. A few streets back from the water it is also the red-light district, which reviewers of three of these hotels mention. In daytime with a pushchair it is simply busy; worth knowing, not worth avoiding.</p>
+<p class="note">Walk counts are straight-line, ten minutes at a relaxed pace, to the places on this page. The harbour sits between Pâquis and the old town, so some pins that look close are a bridge away &mdash; the free Mouettes water taxis cut that walk to a few minutes.</p>
+<p><a class="maplink" href="map/">See every hotel on the map</a></p>
+</section>
+
+<section class="wrap" id="options">
+<div class="section-head"><p class="kicker">Both seasons</p><h2>If a day goes sideways</h2><p class="sub">Nothing here is scheduled. It is the list for when it rains, a nap runs long, or someone needs to run around &mdash; with which ones are free, and which are good on a cold day.</p></div>
+<div class="options">
+<div><h3 class="city-head" style="margin-top:0">In Geneva</h3>
+<div class="opt"><span class="opt-n"><a href="https://ww2.sig-ge.ch/en/a-propos-de-sig/nous-connaitre/sites_expositions/jet_deau" target="_blank" rel="noopener">Jet d&#x27;Eau</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g188057-d195995-Reviews-Jet_d_Eau-Geneva.html" target="_blank" rel="noopener" title="4.2 out of 5 from 5,930 Tripadvisor reviews">4.2</a> <span class="tag">free</span></span><span class="opt-w">Toddlers love walking the jetty toward the 140 m plume - expect spray, rainbows and giggles; free.</span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.geneve.com/en/see-do/attractions/top-10-things-to-do" target="_blank" rel="noopener">Jardin Anglais &amp; Flower Clock (L&#x27;Horloge Fleurie)</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g188057-d2662521-Reviews-The_Flower_Clock-Geneva.html" target="_blank" rel="noopener" title="3.8 out of 5 from 2,024 Tripadvisor reviews">3.8</a> <span class="tag">free</span></span><span class="opt-w">Flat lakeside garden with the giant flower clock and Jet d&#x27;Eau views - an easy pushchair stroll.</span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.geneve.com/fr/attractions/detail/tours-de-la-cathedrale-saint-pierre" target="_blank" rel="noopener">Old Town &amp; St Pierre Cathedral towers</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g188057-d310772-Reviews-Cathedrale_Saint_Pierre-Geneva.html" target="_blank" rel="noopener" title="4.3 out of 5 from 3,029 Tripadvisor reviews">4.3</a> </span><span class="opt-w">157 tower steps to rooftop views; small children have managed it slowly - carrier recommended on cobbles.</span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.geneve.ch/maison-tavel" target="_blank" rel="noopener">Maison Tavel</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g188057-d195989-Reviews-Maison_Tavel-Geneva.html" target="_blank" rel="noopener" title="4.3 out of 5 from 469 Tripadvisor reviews">4.3</a> <span class="tag">free</span> <span class="tag">rainy day</span></span><span class="opt-w">Old Town&#x27;s oldest house with a huge model of 1850 Geneva toddlers can peer at; short, indoor, cheap.</span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.geneve.ch/promenade-bastions" target="_blank" rel="noopener">Parc des Bastions &amp; Reformation Wall</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g188057-d6219158-Reviews-Parc_Des_Bastions-Geneva.html" target="_blank" rel="noopener" title="4.3 out of 5 from 718 Tripadvisor reviews">4.3</a> <span class="tag">free</span></span><span class="opt-w">Big shady lawns, a playground and near-child-sized giant chess pieces right below the Old Town.</span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.geneve.ch/place-jeux-parc-grange" target="_blank" rel="noopener">Parc La Grange (rose garden + playground) &amp; Baby-Plage</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g188057-d6277988-Reviews-Parc_La_Grange-Geneva.html" target="_blank" rel="noopener" title="4.6 out of 5 from 438 Tripadvisor reviews">4.6</a> <span class="tag">free</span></span><span class="opt-w">Best toddler combo: fenced-in playground with sand and paddling pool, then the free Baby-Plage beach next door.</span></div>
+<div class="opt"><span class="opt-n"><a href="https://aubp.ch/" target="_blank" rel="noopener">Bains des Pâquis</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g188057-d3203924-Reviews-Bains_des_Paquis-Geneva.html" target="_blank" rel="noopener" title="4.3 out of 5 from 1,371 Tripadvisor reviews">4.3</a> </span><span class="opt-w">Iconic lakeside jetty for a cheap look at the Jet d&#x27;Eau and a lunch or winter fondue.</span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.geneve.com/en/attractions/geneva-beach" target="_blank" rel="noopener">Genève-Plage</a>  </span><span class="opt-w">Fenced lido with pools, lawn and lake access - a contained summer swim day with a toddler.</span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.geneve.com/en/attractions/detail/mouettes-genevoises" target="_blank" rel="noopener">Mouettes Genevoises water taxis</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g188057-d21493214-Reviews-Mouettes_Genevoises-Geneva.html" target="_blank" rel="noopener" title="4.2 out of 5 from 15 Tripadvisor reviews">4.2</a> <span class="tag">free</span></span><span class="opt-w">Little yellow boats crossing past the Jet d&#x27;Eau - a free mini cruise with the transport card.</span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.cgn.ch/" target="_blank" rel="noopener">CGN Belle Époque paddle steamers</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g188057-d9835742-Reviews-CGN-Geneva.html" target="_blank" rel="noopener" title="3.9 out of 5 from 169 Tripadvisor reviews">3.9</a> </span><span class="opt-w">Historic paddle wheels and engine room to watch; under-6s ride free, ideal for train-and-boat-loving toddlers.</span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.jardinbotaniquegeneve.ch/" target="_blank" rel="noopener">Jardin Botanique de Genève (with animal park)</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g3284927-d7072743-Reviews-Conservatoire_et_Jardin_botaniques_de_Geneve-Pregny_Chambesy_Geneva.html" target="_blank" rel="noopener" title="4.5 out of 5 from 790 Tripadvisor reviews">4.5</a> <span class="tag">free</span></span><span class="opt-w">Free gardens with deer, flamingos, goats and peacocks, a playground and greenhouses for rainy spells.</span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.geneve.ch/parc-animalier-bois-batie" target="_blank" rel="noopener">Parc aux animaux du Bois de la Bâtie</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g188057-d10484075-Reviews-Parc_aux_animaux_du_Bois_de_la_Batie-Geneva.html" target="_blank" rel="noopener" title="4.1 out of 5 from 38 Tripadvisor reviews">4.1</a> <span class="tag">free</span></span><span class="opt-w">Free hilltop mini-zoo of 300+ farm and native animals - ibex, pigs, goats, peacocks - in the woods.</span></div>
+<div class="opt"><span class="opt-n">Muséum d&#x27;histoire naturelle <span class="tag sun">closed until 2028</span></span><span class="opt-w">Shut since January 2024 and not due to reopen before September 2028 &mdash; we checked so you do not plan around it.</span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.patek.com/en/museum/the-patek-philippe-museum" target="_blank" rel="noopener">Patek Philippe Museum</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g188057-d270579-Reviews-Patek_Phillipe_Museum-Geneva.html" target="_blank" rel="noopener" title="4.4 out of 5 from 1,473 Tripadvisor reviews">4.4</a> <span class="tag">rainy day</span></span><span class="opt-w">Glittering automata and tiny watches for a short indoor stop; under-18s free, but hands-off, no photos.</span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.ungeneva.org/en/visit" target="_blank" rel="noopener">Palais des Nations &amp; Broken Chair</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g188057-d1529701-Reviews-Palais_des_Nations-Geneva.html" target="_blank" rel="noopener" title="4.2 out of 5 from 1,650 Tripadvisor reviews">4.2</a> </span><span class="opt-w">Broken Chair and Place des Nations fountains are free to splash-watch; the UN tour suits older kids.</span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.carouge.ch/" target="_blank" rel="noopener">Carouge</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g664427-d195994-Reviews-Ville_de_Carouge-Carouge_Canton_of_Geneva.html" target="_blank" rel="noopener" title="4.4 out of 5 from 199 Tripadvisor reviews">4.4</a> <span class="tag">free</span></span><span class="opt-w">Pastel Sardinian-style village streets, a Saturday market and cafés, 15 minutes by tram from the centre.</span></div>
+</div>
+<div><h3 class="city-head" style="margin-top:0">Further afield</h3>
+<div class="opt"><span class="opt-n"><a href="https://www.telepherique-du-saleve.com/" target="_blank" rel="noopener">Mont Salève cable car</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g3566566-d2698600-Reviews-Telepherique_du_Saleve-Etrembieres_Haute_Savoie_Auvergne_Rhone_Alpes.html" target="_blank" rel="noopener" title="4.3 out of 5 from 265 Tripadvisor reviews">4.3</a> <span class="tag">France &middot; passports</span></span><span class="opt-w">Five-minute cable-car ride to 1,100 m Geneva views, with a free playground - great short mountain fix.</span> <span class="opt-w"><b>About 25 min on tpg bus 8 to Veyrier-Douane, then a short walk across the border</b></span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.chillon.ch/" target="_blank" rel="noopener">Château de Chillon</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g911522-d246808-Reviews-Chateau_de_Chillon-Veytaux_Canton_of_Vaud.html" target="_blank" rel="noopener" title="4.6 out of 5 from 4,448 Tripadvisor reviews">4.6</a> <span class="tag">rainy day</span></span><span class="opt-w">A real lakeside castle with dungeons and towers; indoors on wet days, but lots of stairs - bring a carrier.</span> <span class="opt-w"><b>About 1h25 by train to Montreux/Veytaux-Chillon plus bus 201; Montreux itself ~1h04 direct</b></span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.lavaux-unesco.ch/" target="_blank" rel="noopener">Lavaux vineyard terraces</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g1133410-d8715706-Reviews-Lavaux_Vineyard_Terraces-Grandvaux_Bourg_en_Lavaux_Canton_of_Vaud.html" target="_blank" rel="noopener" title="4.9 out of 5 from 131 Tripadvisor reviews">4.9</a> <span class="tag">free</span></span><span class="opt-w">Train-hop UNESCO terraces with lake views; paved paths work for a pushchair on short stretches.</span> <span class="opt-w"><b>About 1h by train to Cully</b></span></div>
+<div class="opt"><span class="opt-n"><a href="https://annecy-tourisme.com/" target="_blank" rel="noopener">Annecy old town &amp; lake</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g187260-d6936678-Reviews-La_Vieille_Ville-Annecy_Haute_Savoie_Auvergne_Rhone_Alpes.html" target="_blank" rel="noopener" title="4.6 out of 5 from 4,797 Tripadvisor reviews">4.6</a> <span class="tag">free</span> <span class="tag">France &middot; passports</span></span><span class="opt-w">Canals, swans and flat lakeside lawns - a pretty, cheaper French day out; carry passports.</span> <span class="opt-w"><b>About 1h30 by Léman Express train (direct); coaches ~45-60 min</b></span></div>
+<div class="opt"><span class="opt-n"><a href="https://www.chateau-gruyeres.ch/" target="_blank" rel="noopener">Gruyères village &amp; castle</a> <a class="score-pill" href="https://www.tripadvisor.com/Attraction_Review-g198820-d775674-Reviews-Gruyeres_Castle-Gruyeres_La_Gruyere_Canton_of_Fribourg.html" target="_blank" rel="noopener" title="4.5 out of 5 from 1,954 Tripadvisor reviews">4.5</a> </span><span class="opt-w">Car-free hilltop village, castle and cheese dairy - fairy-tale scenery; family ticket and under-6s free.</span> <span class="opt-w"><b>About 2h20-2h35 by train with 1-2 changes - a long day for a toddler</b></span></div>
+</div>
+</div>
+<p><a class="maplink" href="map/">Find the nearest on the map</a></p>
+</section>
+
+<section class="wrap" id="food">
+<div class="section-head"><p class="kicker">Both seasons</p><h2>Cheese, wine, chocolate, coffee</h2><p class="sub">Every name links to the place itself and every rating to its Tripadvisor page. Watch the Sunday tags &mdash; Geneva takes Sundays seriously.</p></div>
+<h3 class="city-head">Fondue</h3>
+<p class="prose" style="margin:0 0 1rem">Cheese, in a pot, with bread. Moitié-moitié &mdash; half Gruyère, half Vacherin &mdash; is the classic order.</p>
+<div class="photo-duo"><figure class=""><img src="img/soleil.jpg" alt="Fondue at Café du Soleil" loading="lazy"><figcaption>Café du Soleil, in Petit-Saconnex.</figcaption></figure><figure class=""><img src="img/armures.jpg" alt="The dining room at Les Armures with a suit of armour" loading="lazy"><figcaption>Les Armures, in the old town, with a suit of armour in the dining room.</figcaption></figure></div>
+<div class="spot"><span class="name"><a href="https://www.cafedusoleil.ch/" target="_blank" rel="noopener">Café du Soleil</a></span><span><a class="score-pill" href="https://www.tripadvisor.com/Restaurant_Review-g188057-d751711-Reviews-Cafe_du_Soleil-Geneva.html" target="_blank" rel="noopener" title="4.3 out of 5 from 1,725 Tripadvisor reviews">4.3</a></span><p class="why">Order the house Gruyère AOP fondue with crusty bread; Geneva&#x27;s classic neighbourhood fondue café, open every day, so book ahead. <span class="addr">Place du Petit-Saconnex 6</span></p></div>
+<div class="spot"><span class="name"><a href="https://www.lesarmures.ch/restaurant/" target="_blank" rel="noopener">Restaurant Les Armures</a></span><span><a class="score-pill" href="https://www.tripadvisor.com/Restaurant_Review-g188057-d697870-Reviews-Restaurant_Les_Armures-Geneva.html" target="_blank" rel="noopener" title="4.2 out of 5 from 1,982 Tripadvisor reviews">4.2</a></span><p class="why">Moitié-moitié fondue (Vacherin and Gruyère) with a Valais dried-meat plate, in a beamed Old Town dining room full of armour. <span class="addr">Rue du Puits-Saint-Pierre 1</span></p></div>
+<div class="spot"><span class="name"><a href="https://www.restaurant-hoteldeville.ch/" target="_blank" rel="noopener">Brasserie-Restaurant de l&#x27;Hôtel-de-Ville</a></span><span><a class="score-pill" href="https://www.tripadvisor.com/Restaurant_Review-g188057-d877866-Reviews-Brasserie_Restaurant_de_l_Hotel_de_Ville-Geneva.html" target="_blank" rel="noopener" title="3.6 out of 5 from 559 Tripadvisor reviews">3.6</a></span><p class="why">Order the moitié-moitié fondue that won the 2024 Cook&#x27;n&#x27;Cheese Gruyère AOP prize, served beside the cantonal parliament. <span class="addr">Grand-Rue 39</span></p></div>
+<div class="spot"><span class="name"><a href="https://www.hoteledelweissgeneva.com/fr/edelweiss.html" target="_blank" rel="noopener">Restaurant Edelweiss</a> <span class="tag sun">closed Sundays</span></span><span><a class="score-pill" href="https://www.tripadvisor.com/Restaurant_Review-g188057-d1044937-Reviews-Restaurant_Edelweiss-Geneva.html" target="_blank" rel="noopener" title="4.0 out of 5 from 833 Tripadvisor reviews">4.0</a></span><p class="why">Unabashedly touristy chalet evening: cheese fondue or raclette with live alphorn, accordion and yodelling; a toddler will love the music. <span class="addr">Place de la Navigation 2</span></p></div>
+<h3 class="city-head">Easy meals with a small one</h3>
+<p class="prose" style="margin:0 0 1rem">Lunch is the main meal here &mdash; set menus are cheaper and kitchens close in the afternoon.</p>
+<div class="photo-duo"><figure class=""><img src="img/paquis.jpg" alt="The Bains des Pâquis jetty and lighthouse on the lake" loading="lazy"><figcaption>The Bains des Pâquis jetty, where the Buvette is.</figcaption></figure><figure class=""><img src="img/negociants.jpg" alt="The bar at Café des Négociants in Carouge" loading="lazy"><figcaption>Café des Négociants in Carouge, which has a children's menu.</figcaption></figure></div>
+<div class="spot"><span class="name"><a href="https://aubp.ch/buvette/" target="_blank" rel="noopener">La Buvette des Bains des Pâquis</a></span><span><a class="score-pill" href="https://www.tripadvisor.com/Restaurant_Review-g188057-d795460-Reviews-La_Buvette_Des_Bains_Des_Paquis-Geneva.html" target="_blank" rel="noopener" title="4.0 out of 5 from 833 Tripadvisor reviews">4.0</a></span><p class="why">Cheap self-service plat du jour on a pier in the lake; in winter book the famous crémant fondue in the wood-heated cabin. <span class="addr">Quai du Mont-Blanc 30</span></p></div>
+<div class="spot"><span class="name"><a href="https://dapaolo.ch/" target="_blank" rel="noopener">Da Paolo</a></span><span><a class="score-pill" href="https://www.tripadvisor.com/Restaurant_Review-g188057-d776629-Reviews-Da_Paolo-Geneva.html" target="_blank" rel="noopener" title="4.0 out of 5 from 779 Tripadvisor reviews">4.0</a></span><p class="why">Wood-fired pizzas in a noisy family-run Eaux-Vives institution, open daily from 11:30, steps from the Jet d&#x27;Eau waterfront. <span class="addr">Rue du Lac 3</span></p></div>
+<div class="spot"><span class="name"><a href="https://negociants.ch/fr/" target="_blank" rel="noopener">Café des Négociants</a> <span class="tag sun">closed Sundays</span></span><span><a class="score-pill" href="https://www.tripadvisor.com/Restaurant_Review-g664427-d697926-Reviews-Cafe_Des_Negociants-Carouge.html" target="_blank" rel="noopener" title="4.1 out of 5 from 308 Tripadvisor reviews">4.1</a></span><p class="why">Lyon-style bouchon in Carouge: escargots, Léman perch fillets, then let staff pull a Geneva bottle from the walk-in cellar. <span class="addr">Rue de la Filature 29</span></p></div>
+<div class="spot"><span class="name"><a href="https://www.cottagecafe.ch/" target="_blank" rel="noopener">Cottage Café</a> <span class="tag sun">closed Sundays</span></span><span><a class="score-pill" href="https://www.tripadvisor.com/Restaurant_Review-g188057-d2067022-Reviews-Cottage_Cafe-Geneva.html" target="_blank" rel="noopener" title="4.1 out of 5 from 590 Tripadvisor reviews">4.1</a></span><p class="why">Bircher muesli and coffee by day, tapas by night, in a tiny garden beside the Brunswick Monument facing the Jet d&#x27;Eau. <span class="addr">Rue Adhémar-Fabri 7</span></p></div>
+<h3 class="city-head">Wine</h3>
+<p class="prose" style="margin:0 0 1rem">Geneva is Switzerland's third-largest wine canton, about 1,400 hectares of vines.</p>
+<div class="photo-duo"><figure class=""><img src="img/uva.jpg" alt="The wooden bar at UVA Genève" loading="lazy"><figcaption>UVA, which pours Geneva wines. Closed all weekend.</figcaption></figure><figure class=""><img src="img/lavaux.jpg" alt="The Lavaux vineyard terraces above Lake Geneva" loading="lazy"><figcaption>Lavaux, an hour away by train: UNESCO-listed terraces above the lake.</figcaption></figure></div>
+<div class="spot"><span class="name"><a href="https://www.uva-geneve.com/" target="_blank" rel="noopener">UVA Genève</a> <span class="tag sun">closed Sundays</span></span><span></span><p class="why">Swiss-only wine list with a Geneva focus; order local Chasselas or Gamaret with a Genevan cheese and charcuterie board. <span class="addr">Rue des Étuves 1</span></p></div>
+<div class="spot"><span class="name"><a href="https://caveaudebacchus.ch/pages/nous-rendre-visite" target="_blank" rel="noopener">Chez Bacchus</a> <span class="tag sun">closed Sundays</span></span><span><a class="score-pill" href="https://www.tripadvisor.com/Restaurant_Review-g188057-d20266759-Reviews-Chez_Bacchus-Geneva.html" target="_blank" rel="noopener" title="4.4 out of 5 from 18 Tripadvisor reviews">4.4</a></span><p class="why">Wine bar of the Caveau de Bacchus merchant: about 40 wines by the glass from 800-plus, with bistronomic plates to share. <span class="addr">Cours de Rive 7</span></p></div>
+<div class="spot"><span class="name">Le Blanc Valet <span class="tag sun">closed Sundays</span></span><span></span><p class="why">Lively Eaux-Vives wine bistro with local and rare bottles at fair prices; ask which of the rotating by-the-glass wines are Genevan. <span class="addr">Rue Henri-Blanvalet 11</span></p></div>
+<div class="spot"><span class="name"><a href="https://www.cavedegeneve.ch/en_GB" target="_blank" rel="noopener">La Cave de Genève</a></span><span></span><p class="why">The canton&#x27;s big growers&#x27; cooperative in Satigny, Switzerland&#x27;s largest wine commune: taste and buy Geneva Chasselas, Gamay and Gamaret. <span class="addr">Rue du Pré-Bouvier 30</span></p></div>
+<h3 class="city-head">Chocolate</h3>
+<p class="prose" style="margin:0 0 1rem">Most of these close on Sundays. Favarger's walk-in workshop is the exception, and it is good with a toddler.</p>
+<div class="photo-duo"><figure class=""><img src="img/pascoet.jpg" alt="A row of ganaches from Philippe Pascoët" loading="lazy"><figcaption>Ganaches from Philippe Pascoët in Carouge.</figcaption></figure><figure class=""><img src="img/sweetzerland.jpg" alt="The display counters at Sweetzerland" loading="lazy"><figcaption>Sweetzerland, near the station.</figcaption></figure></div>
+<div class="spot"><span class="name"><a href="https://durhonechocolatier.ch/" target="_blank" rel="noopener">Du Rhône Chocolatier</a> <span class="tag sun">closed Sundays</span></span><span><a class="score-pill" href="https://www.tripadvisor.com/Restaurant_Review-g188057-d1200770-Reviews-Du_Rhone_Chocolatier-Geneva.html" target="_blank" rel="noopener" title="4.1 out of 5 from 42 Tripadvisor reviews">4.1</a></span><p class="why">Geneva&#x27;s oldest chocolatier, founded 1875: try the Pavés 1875 or Nobles du Rhône, then a hot chocolate in the tea room. <span class="addr">Rue du Rhône 118</span></p></div>
+<div class="spot"><span class="name"><a href="https://www.favarger.com/pages/boutiques" target="_blank" rel="noopener">Favarger (Boutique Marché &amp; Atelier)</a></span><span></span><p class="why">Since 1826: buy Avelines and Nougalines, then mould your own bars at the walk-in workshop, CHF 20, no booking needed. <span class="addr">Rue du Marché 38</span></p></div>
+<div class="spot"><span class="name"><a href="https://chocolat-auer.ch/" target="_blank" rel="noopener">Chocolatier Auer</a> <span class="tag sun">closed Sundays</span></span><span><a class="score-pill" href="https://www.tripadvisor.com/Restaurant_Review-g188057-d1200542-Reviews-Auer-Geneva.html" target="_blank" rel="noopener" title="3.7 out of 5 from 50 Tripadvisor reviews">3.7</a></span><p class="why">Family-run since 1939; the must-buy is the chocolate-coated Amandes Princesse almonds, which reviewers call unbeatable. <span class="addr">Rue de Rive 4</span></p></div>
+<div class="spot"><span class="name"><a href="https://www.pascoet.com/nos-boutiques/" target="_blank" rel="noopener">Philippe Pascoët</a> <span class="tag sun">closed Sundays</span></span><span></span><p class="why">Master chocolatier&#x27;s original Carouge shop and workshop; try the &#x27;Adrien&#x27; and &#x27;Passion&#x27; ganaches, which have short shelf lives. <span class="addr">Rue Saint-Joseph 12</span></p></div>
+<div class="spot"><span class="name"><a href="https://www.sweetzerland.net/" target="_blank" rel="noopener">Sweetzerland</a> <span class="tag sun">closed Sundays</span></span><span></span><p class="why">Bright modern chocolatier on the walk from Cornavin to the lake, known for truffles, chocolate almonds and a richly praised hot chocolate. <span class="addr">Rue du Mont-Blanc 5</span></p></div>
+<h3 class="city-head">Coffee</h3>
+<p class="prose" style="margin:0 0 1rem">Specialty roasters and two old cafés that have been pouring since 1921 and 1950.</p>
+<div class="spot"><span class="name"><a href="https://borealcoffee.ch/locations/" target="_blank" rel="noopener">Boréal Coffee Shop (Stand)</a></span><span><a class="score-pill" href="https://www.tripadvisor.com/Restaurant_Review-g188057-d2453411-Reviews-Boreal_Coffee_Shop_Stand-Geneva.html" target="_blank" rel="noopener" title="4.2 out of 5 from 260 Tripadvisor reviews">4.2</a></span><p class="why">Geneva&#x27;s own specialty roaster since 2009; get a flat white or filter of house-roasted beans and a cinnamon roll. <span class="addr">Rue du Stand 60</span></p></div>
+<div class="spot"><span class="name"><a href="https://www.instagram.com/birdiecoffee/" target="_blank" rel="noopener">Birdie Food &amp; Coffee</a> <span class="tag">Instagram</span></span><span></span><p class="why">Pioneer of Geneva&#x27;s specialty scene since 2014, rotating guest roasters; go for weekend brunch, but there are no reservations. <span class="addr">Rue des Bains 40</span></p></div>
+<div class="spot"><span class="name"><a href="https://www.mylittlecup.ch/" target="_blank" rel="noopener">My Little Cup (Rive Gauche)</a></span><span></span><p class="why">Specialty bar a stone&#x27;s throw from the Jet d&#x27;Eau, pulling Colonna espresso with rotating filter roasters; open weekend mornings. <span class="addr">Rue des Eaux-Vives 15</span></p></div>
+<div class="spot"><span class="name"><a href="https://www.laclemence.ch/" target="_blank" rel="noopener">La Clémence</a></span><span><a class="score-pill" href="https://www.tripadvisor.com/Restaurant_Review-g188057-d1068860-Reviews-La_Clemence-Geneva.html" target="_blank" rel="noopener" title="3.9 out of 5 from 280 Tripadvisor reviews">3.9</a></span><p class="why">Historic Old Town café since 1950: an espresso or winter vin chaud on the terrace overlooking Place du Bourg-de-Four. <span class="addr">Place du Bourg-de-Four 20</span></p></div>
+<div class="spot"><span class="name">Café Remor</span><span></span><p class="why">Old-school 1921 café-glacier at Place du Cirque: coffee for you, homemade ice cream or banana split for the toddler. <span class="addr">Place du Cirque 3</span></p></div>
+</section>
+
+<section class="wrap" id="toddler">
+<div class="section-head"><p class="kicker">Both seasons</p><h2>With a small one in Switzerland</h2><p class="sub">What parents who have done it say, checked against the official sources. Each card names where it came from.</p></div>
+<div class="facts">
+<div class="fact"><h4>Geneva Transport Card</h4><p>Anyone staying in approved accommodation registered with Geneva Tourism gets a free digital Geneva Transport Card, emailed by the host ~3 days before arrival, valid for the whole stay on unireso zone 10 (canton of Geneva except Céligny): tpg buses/trams, CFF trains and Mouettes boats, including the Cornavin-airport train. It does NOT cover attractions or the Salève cable car (in France). geneve.com calls it personal/non-transferable; tpg says it is issued in the booking holder&#x27;s name and several travelling together can share one card - ask your hotel.</p><span class="src"><a href="https://www.geneve.com/en/already-here/geneva-transport-card-for-guests" target="_blank" rel="noopener">geneve.com</a> &middot; <a href="https://www.tpg.ch/en/welcome-geneva" target="_blank" rel="noopener">tpg.ch</a></span></div>
+<div class="fact"><h4>Under-6s ride free</h4><p>Children under 6 travel free on SBB trains, accompanied or not, and on tpg trams/buses when with a ticket-holding adult; CGN lake boats are also free under 6. At 2y9m (July 2027) and 3y2m (Dec 2027) the child needs no ticket anywhere on Swiss public transport - the Junior Travelcard / Children&#x27;s Co-Travel card (CHF 30/yr each, ages 6-15) and the free Swiss Family Card are irrelevant until age 6.</p><span class="src"><a href="https://www.sbb.ch/en/travel-information/individual-needs/travelling-with-children/tickets-travelcards.html" target="_blank" rel="noopener">sbb.ch</a> &middot; <a href="https://www.tpg.ch/en/purchase/our-offers-and-good-deals/junior-and-accompanied-children-cards" target="_blank" rel="noopener">tpg.ch</a></span></div>
+<div class="fact"><h4>Sunday closures and shop hours</h4><p>Geneva law (LHOM) makes shops close on Sundays and public holidays; normal closing is 19:00 Mon-Thu, 19:30 Friday, 18:00 Saturday, with one late evening per week to 21:00. Stock up on nappies, milk and snacks on Saturday. On Sundays use Cornavin and airport station shops (open 365 days), petrol-station shops (Migrolino/Pronto), bakeries (may open Sat/Sun to 19:00) and family-run shops.</p><span class="src"><a href="https://silgeneve.ch/legis/program/books/RSG/htm/rsg_i1_05.htm" target="_blank" rel="noopener">silgeneve.ch</a> &middot; <a href="https://switzerlanding.com/closed-on-sundays/" target="_blank" rel="noopener">switzerlanding.com</a></span></div>
+<div class="fact"><h4>Nappies, formula, pharmacies</h4><p>Migros and Coop supermarkets and pharmacies stock major nappy and formula brands, and Swiss tap water is safe for preparing formula. Most pharmacies close on Sundays; Pharma24 (Boulevard de la Cluse 38, near HUG hospital, +41 22 808 00 18) is open 24/7. Emergency medical number: 144.</p><span class="src"><a href="https://www.tour-switzerland.ch/guides/switzerland-with-baby/" target="_blank" rel="noopener">tour-switzerland.ch</a> &middot; <a href="https://www.hug.ch/pharmacie/service-garde" target="_blank" rel="noopener">hug.ch</a></span></div>
+<div class="fact"><h4>Tap and fountain water</h4><p>Geneva tap water is supplied and continuously tested by SIG and meets Swiss food-safety standards; the city&#x27;s public fountains deliver the same drinkable water. Use the GE-Soif map to find the nearest fountain - bring a refillable bottle. (A Sept 2024 main burst briefly made water unsafe in one area; that was resolved 1 Oct 2024.)</p><span class="src"><a href="https://www.geneve.com/en/plan-stay/practical-info/public-fountains" target="_blank" rel="noopener">geneve.com</a> &middot; <a href="https://www.ge-soif.ch/" target="_blank" rel="noopener">ge-soif.ch</a></span></div>
+<div class="fact"><h4>Playgrounds</h4><p>Best toddler playground: Parc La Grange (sand play, paddling pool by the playground, kiosk; open 06:00-22:00 Jun-Aug, 07:00-18:00 Nov-Mar). The City&#x27;s 11 park paddling pools (incl. La Grange) open 09:00-20:00 May-September; they are unsupervised and meant for under-7s with an adult. Parc des Bastions has a playground, giant chess and a winter ice rink but stairs at the entrances. Other blog picks: Parc Bertrand (calm), the Botanical Garden (playground + animals), Bois de la Bâtie (free animal park).</p><span class="src"><a href="https://www.geneve.ch/place-jeux-parc-grange" target="_blank" rel="noopener">geneve.ch</a> &middot; <a href="https://www.geneve.ch/pataugeoires" target="_blank" rel="noopener">geneve.ch</a></span></div>
+<div class="fact"><h4>Lake swimming for toddlers</h4><p>Baby-Plage (Quai Gustave-Ador) is a free sand-and-grass city beach next to Parc La Grange, with showers, toilets and step-free access; reserved for children until 2007 and now open to all. Lifeguard supervision is NOT confirmed officially. Genève-Plage (Port-Noir, Cologny) is a fenced paid lido, May-Sept (approx. 14 May-27 Sept in 2026), adult CHF 7 / child CHF 3, with pools and a slide. Bains des Pâquis: May &amp; Sept 10-18h, Jun-Aug 9-20h, CHF 2 adult / CHF 1 child, but it is a pebbly jetty with deeper water and stairs - better for a look and lunch than toddler paddling.</p><span class="src"><a href="https://www.geneve.com/fr/attractions/detail/baby-plage" target="_blank" rel="noopener">geneve.com</a> &middot; <a href="https://www.geneve.com/en/attractions/geneva-beach" target="_blank" rel="noopener">geneve.com</a></span></div>
+<div class="fact"><h4>Pushchairs on Mouettes boats and trams</h4><p>Solar-powered Mouettes accept unfolded pushchairs (and up to two wheelchairs); the traditional Mouettes take folded pushchairs only. Mouettes are small (roughly 15-18 people) and have no fixed timetable. Trams and buses in Geneva are largely low-floor; avoid rush hours when they are crowded. On cable cars staff may ask you to fold the buggy.</p><span class="src"><a href="https://www.geneve.com/fr/votre-sejour/informations-touristiques/accessibilite-a-geneve" target="_blank" rel="noopener">geneve.com</a> &middot; <a href="https://www.tripadvisor.com/Attraction_Review-g188057-d21493214-Reviews-Mouettes_Genevoises-Geneva.html" target="_blank" rel="noopener">tripadvisor.com</a></span></div>
+<div class="fact"><h4>Eating out: cost and kids</h4><p>Geneva is expensive. Lunchtime set menus (plat du jour) run about CHF 16-30 and evening à-la-carte mains CHF 20-50; a casual main is roughly CHF 25-35. Family restaurants usually offer a children&#x27;s plate for about CHF 10-14. Lunch is the cheaper meal, and many restaurants close between lunch and dinner, so plan a lunch-focused day. Kid-friendly picks named by Geneva Tourism: Chez ma Cousine, Molino, La Storia, Inglewood, Un R de Famille (brunch with play space).</p><span class="src"><a href="https://help.myswitzerland.com/hc/en-us/articles/213130669-How-much-do-lunch-and-dinner-cost-in-a-restaurant" target="_blank" rel="noopener">help.myswitzerland.com</a> &middot; <a href="https://www.cagi.ch/en/practical-infos/budget-preparation/" target="_blank" rel="noopener">cagi.ch</a></span></div>
+<div class="fact"><h4>Car seats in taxis / Uber</h4><p>Swiss law: children under 12 who are under 150 cm must use a child seat in a car (CHF 60 fine). Taxis are not clearly required to supply one, so bring a travel seat or pre-book a seat-equipped transfer; the public transport card makes taxis largely unnecessary.</p><span class="src"><a href="https://www.ch.ch/en/compulsory-child-seats/" target="_blank" rel="noopener">ch.ch</a> &middot; <a href="https://www.taxibambino.com/single-post/do-taxis-in-geneva-have-car-child-seats" target="_blank" rel="noopener">taxibambino.com</a></span></div>
+<div class="fact"><h4>Sun, wind and cold</h4><p>Even in July bring a layer: the wind off the lake &#x27;can drop the feel by ten degrees in minutes&#x27; (LorenziGo). The Botanical Garden has unshaded stretches - bring sunscreen and water. December: the Jet d&#x27;Eau runs only 10:00-16:00 (and in 2026 it was shut 2 Nov-3 Dec for maintenance), many outdoor sites shorten hours, and Bains des Pâquis switches to sauna/fondue mode.</p><span class="src"><a href="https://lorenzigo.com/geneva-with-kids-family-guide/" target="_blank" rel="noopener">lorenzigo.com</a> &middot; <a href="https://ww2.sig-ge.ch/en/a-propos-de-sig/nous-connaitre/sites_expositions/jet_deau" target="_blank" rel="noopener">ww2.sig-ge.ch</a></span></div>
+<div class="fact"><h4>Cable cars and altitude</h4><p>Toddlers are generally fine at Salève level (top station 1,100 m). Family-guide advice: stay below about 2,000 m for babies under 12 months; for higher peaks such as Jungfraujoch or Glacier 3000 forum advice is to check with a paediatrician first. Expect to fold the pushchair in cabins.</p><span class="src"><a href="https://www.telepherique-du-saleve.com/" target="_blank" rel="noopener">telepherique-du-saleve.com</a> &middot; <a href="https://www.tour-switzerland.ch/guides/switzerland-with-baby/" target="_blank" rel="noopener">tour-switzerland.ch</a></span></div>
+</div>
+<h3 class="city-head">The blogs we read</h3>
+<ul class="prose" style="padding-left:1.1rem">
+<li><a href="https://lorenzigo.com/geneva-with-kids-family-guide/" target="_blank" rel="noopener">LorenziGo (Gabriel Lorenzi) - Geneva with Kids: Our Honest Family Travel Guide</a> &mdash; Most useful toddler source. Hotel transport card covers trams, trains and ferries; lakefront flat and pushchair-friendly but Old Town cobbles and Bains des&hellip;</li>
+<li><a href="https://lorenzigo.com/best-restaurants-geneva/" target="_blank" rel="noopener">LorenziGo - Best restaurants in Geneva</a> &mdash; Casual main course about CHF 25-35, full dinner with wine CHF 80+; Lebanese counters under CHF 20; most restaurants close between lunch and&hellip;</li>
+<li><a href="https://havebabywilltravel.com/geneva-with-kids/" target="_blank" rel="noopener">Have Baby Will Travel (guest post by Kaamna Bhojwani-Dhawan of Momaboard) - Geneva with Kids</a> &mdash; Geneva is small and very walkable; her 2-year-old climbed the 150-odd St Pierre cathedral tower steps slowly; Botanical Garden playground and small animal farm; city&hellip;</li>
+<li><a href="https://www.learningescapes.net/one-day-in-geneva-with-kids" target="_blank" rel="noopener">Learning Escapes (Marta) - One day in Geneva with kids (2016)</a> &mdash; Under-6s free on transport; buses manageable with buggies; Jardin Anglais, Baby Plage, little tourist train, Mouettes to the Jet d&#x27;Eau, Maison Tavel; mains ~EUR 25-30&hellip;</li>
+<li><a href="https://www.tour-switzerland.ch/guides/switzerland-with-baby/" target="_blank" rel="noopener">Tour Switzerland - Switzerland with a baby or toddler: the complete family guide</a> &mdash; Under-6s free on trains/boats/most mountain railways; Migros/Coop/pharmacies stock nappies and formula; tap water fine for formula; children&#x27;s plate CHF 10-14; changing&hellip;</li>
+<li><a href="https://switzerlanding.com/closed-on-sundays/" target="_blank" rel="noopener">Switzerlanding (Ashley Faulkes) - Everything is closed on Sundays. Or is it?</a> &mdash; Supermarkets, most shops and pharmacies close Sundays; big stations (incl. Geneva Cornavin) and airports have supermarkets open 365 days; petrol-station Migrolino/Pronto&hellip;</li>
+<li><a href="https://switzerlanding.com/geneva-transport-card/" target="_blank" rel="noopener">Switzerlanding - Geneva Transport Card</a> &mdash; Explains the free hotel-guest transport card, zone 10 coverage and that it includes the airport-Cornavin&hellip;</li>
+<li><a href="https://littleguestcollection.com/en/magazine/geneva-with-family-our-must-see-practical-guide" target="_blank" rel="noopener">Little Guest Collection magazine - Geneva with family: our must-see practical guide</a> &mdash; Free Bois-de-la-Bâtie animal park; Salève cable car; Jellyfish sweets and Chien Bleu kids&#x27; bookshop; Un R de Famille and Together for Sunday brunch with play&hellip;</li>
+<li><a href="https://healthyhappylife.com/switzerland-travel-with-a-toddler-10-day-itinerary-in-fall-season/" target="_blank" rel="noopener">HealthyHappyLife (Kathy Patalsky) - Switzerland travel with a toddler: 10-day fall itinerary</a> &mdash; Late-November trip with a 3-year-old: train-heavy plan built around a train-loving toddler, one suitcase each, a baby carrier saved them (incl. walk back from Chillon),&hellip;</li>
+<li><a href="https://www.myswissalps.com/community/thread/switzerland-with-a-toddler/" target="_blank" rel="noopener">MySwissAlps forum - Traveling in Switzerland with a toddler</a> &mdash; Forum moderators: most trains take pushchairs and some have family coaches; low-floor coaches ease boarding; bring a foldable stroller or carrier rather than a car seat&hellip;</li>
+<li><a href="https://www.taxibambino.com/single-post/do-taxis-in-geneva-have-car-child-seats" target="_blank" rel="noopener">Taxibambino blog - Do taxis in Geneva have car child seats?</a> &mdash; Commercial child-seat transfer company: under-12s under 150 cm need a seat in any vehicle including taxis; ordinary taxis may not carry one, so pre-book or bring your&hellip;</li>
+</ul>
+</section>
+
+<section class="wrap" id="getting">
+  <div class="section-head">
+    <p class="kicker">Both seasons</p>
+    <h2>Getting there</h2>
+    <p class="sub">No nonstop from Los Angeles, a seven-minute train from the airport, and from then on a city where the transport is free for anyone in a hotel.</p>
+  </div>
+  <h3 class="city-head">July 2027, actually on sale</h3>
+  <div class="prose"><p>A live flight search on 8 October 2026, economy, round trip 10 to 24 July 2027, two adults and a small child:</p></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th scope="col">Airline</th><th scope="col">Route</th><th scope="col">All three of us</th></tr></thead>
+    <tbody>
+      <tr><td>TAP</td><td>via Lisbon &mdash; a fourteen-hour layover coming home</td><td class="num">$2,770</td></tr>
+      <tr><td>British Airways</td><td>via New York and London</td><td class="num">$3,388</td></tr>
+      <tr><td>Aer Lingus</td><td>two stops</td><td class="num">$3,569</td></tr>
+      <tr><td>Air France</td><td>two stops</td><td class="num">$3,670</td></tr>
+      <tr><td>Lufthansa</td><td>via Frankfurt, or Munich</td><td class="num">$3,811</td></tr>
+      <tr><td>KLM</td><td>two stops</td><td class="num">$3,934</td></tr>
+      <tr><td>SWISS</td><td>nonstop to Zurich, then on to Geneva &mdash; the fastest, about 13 hours</td><td class="num">$5,433</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">The search returned the toddler as a third full-fare seat, so we cannot split out a child fare &mdash; treat these as the price for three seats. The cheapest premium economy was TAP at $4,945.</p>
+  <h3 class="city-head">December 2027, not yet</h3>
+  <div class="prose">
+    <p>Airlines open fares roughly eleven to twelve months ahead &mdash; Lufthansa about 360 days, American and Delta about 330 &mdash; so an early-December 2027 trip starts appearing around December 2026 to January 2027. As a rough guide only, the same family's December 2026 fares were $2,865 to $3,130.</p>
+    <p>Flying nonstop into Zurich and taking the train down loses on both counts in our search: three more hours on a train after an eleven-hour flight, for more money than SWISS's own connection into Geneva.</p>
+  </div>
+  <h3 class="city-head">Once we land</h3>
+  <div class="facts">
+    <div class="fact"><h4>Seven minutes</h4><p>The train from the airport to Cornavin takes seven minutes. A taxi is a fixed CHF&nbsp;50 to the right bank and CHF&nbsp;60 to the left.</p>
+      <span class="src"><a href="https://www.gva.ch/en/passengers/access-and-transport/taxis" target="_blank" rel="noopener">Genève A&eacute;roport</a></span></div>
+    <div class="fact"><h4>The free ticket is gone</h4><p>Plenty of older blogs still mention a free ticket from a machine in baggage reclaim. It ended on 1 January 2022; it is now CHF&nbsp;3 for an hour.</p>
+      <span class="src"><a href="https://www.gva.ch/en/passengers/travel-preparation/faq" target="_blank" rel="noopener">airport FAQ</a></span></div>
+    <div class="fact"><h4>Then it is free anyway</h4><p>Anyone staying in registered accommodation gets the Geneva Transport Card: trams, buses, trains and the lake taxis in the whole canton, including CERN and the airport train. The hotel emails it about three days before arrival.</p>
+      <span class="src"><a href="https://www.geneve.com/en/plan-stay/getting-around/free-geneva-transport-card" target="_blank" rel="noopener">Geneva Tourism</a></span></div>
+    <div class="fact"><h4>Under-sixes ride free</h4><p>On Swiss trains, trams, buses and the lake boats, a child under six never needs a ticket.</p>
+      <span class="src"><a href="https://www.sbb.ch/en/travel-information/individual-needs/travelling-with-children/tickets-travelcards.html" target="_blank" rel="noopener">SBB</a></span></div>
+  </div>
+</section>
+
+<section class="wrap" id="cost">
+  <div class="section-head">
+    <p class="kicker">Deciding</p>
+    <h2>Summer or snow?</h2>
+    <p class="sub">The same city, two different weeks. Averages are MeteoSwiss's 1991&ndash;2020 records for Geneva.</p>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th scope="col"></th><th scope="col">July</th><th scope="col">December</th></tr></thead>
+    <tbody>
+      <tr><td>High / low</td><td class="num">26.7&deg; / 14.8&deg;C</td><td class="num">5.7&deg; / 0.0&deg;C</td></tr>
+      <tr><td>Rain</td><td class="num">77&nbsp;mm over 8 days</td><td class="num">88&nbsp;mm over 10 days</td></tr>
+      <tr><td>Sunshine in the month</td><td class="num">271 hours</td><td class="num">49 hours</td></tr>
+      <tr><td>Daylight</td><td class="num">15.8 h, sunset 21:32</td><td class="num">8.7 h, sunset 16:53</td></tr>
+      <tr><td>Crowds</td><td>The busiest hotel months are August, July and June</td><td>Well outside the peak</td></tr>
+      <tr><td>The lake</td><td>Swimming, beaches, boats every few minutes</td><td>Boats on a reduced winter schedule</td></tr>
+      <tr><td>CERN</td><td>Open, closed Mondays</td><td>Open, closed Mondays and around Christmas</td></tr>
+      <tr><td>Snow</td><td>None</td><td>A ski day in the Alps, snow permitting</td></tr>
+      <tr><td>What's on</td><td>Free open-air cinema; Swiss National Day on 1 August</td><td>Christmas market; Escalade weekend</td></tr>
+      <tr><td>Flights</td><td>On sale, from $2,770 for three</td><td>Not on sale until around December 2026</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Sources: <a href="https://www.meteoswiss.admin.ch/weather/weather-and-climate-from-a-to-z/bise.html" target="_blank" rel="noopener">MeteoSwiss</a> and its open daily data for Geneva;
+    <a href="https://statistique.ge.ch/tel/publications/2026/informations_statistiques/autres_themes/is_hotellerie_06_2026.pdf" target="_blank" rel="noopener">Geneva statistics office</a>;
+    <a href="https://www.geneve.com/en/whats-on/swiss-national-day-in-geneva" target="_blank" rel="noopener">Geneva Tourism</a>.</p>
+  <h3 class="city-head">What a summer week costs</h3>
+  <div class="prose"><p>Flights for three plus five hotel nights. Hotel rates are what was quoted for 12&ndash;15 July 2027, multiplied out to five nights &mdash; a planning number, not a booking.</p></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th scope="col">If we book&hellip;</th><th scope="col">Flights</th><th scope="col">Hotel, 5 nights</th><th scope="col">Total</th></tr></thead>
+    <tbody>
+<tr><td><b>The cheapest</b><br><span style="color:var(--ink-soft)">TAP via Lisbon; Eastwest. Watch the return: a fourteen-hour layover in Lisbon.</span></td><td class="num">$2,770</td><td class="num">$1,985</td><td class="num"><b>$4,755</b></td></tr>
+<tr><td><b>The sensible one</b><br><span style="color:var(--ink-soft)">Lufthansa via Frankfurt; Eastwest. One short connection each way.</span></td><td class="num">$3,811</td><td class="num">$1,985</td><td class="num"><b>$5,796</b></td></tr>
+<tr><td><b>With a kitchen</b><br><span style="color:var(--ink-soft)">Lufthansa via Frankfurt; Stay KooooK. The aparthotel, with a kitchenette and the CERN tram outside.</span></td><td class="num">$3,811</td><td class="num">$2,035</td><td class="num"><b>$5,846</b></td></tr>
+<tr><td><b>The splurge</b><br><span style="color:var(--ink-soft)">SWISS via Zurich; La Réserve. The kids' club from six months, and the lake.</span></td><td class="num">$5,433</td><td class="num">$9,050</td><td class="num"><b>$14,483</b></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note"><b>Winter adds the ski day.</b> A two-hour family lesson in Villars was CHF&nbsp;200 last season, and the cog railway up to Bretaye CHF&nbsp;36 per adult. Rental and train fares are on top, and we could not confirm either, so they are not in this number. Food in Geneva is expensive: lunch set menus run about CHF&nbsp;16&ndash;30, dinner mains CHF&nbsp;20&ndash;50.</p>
+</section>
+
+<section class="wrap" id="resources">
+<div class="section-head"><p class="kicker">Paperwork</p><h2>Where all of this came from</h2><p class="sub">Every source the research used, checked on 8 October 2026. Tripadvisor ratings were read from each listing on the same day.</p></div>
+<div class="res">
+<h3>CERN</h3>
+<ul>
+<li><a href="https://home.cern/cern-inaugurates-science-gateway-its-new-outreach-centre-for-science-education/" target="_blank" rel="noopener">home.cern/cern-inaugurates-science-gateway-its-new-outreach-centre-for-scienc&hellip;</a></li>
+<li><a href="https://visit.cern/index.php/science-gateway" target="_blank" rel="noopener">visit.cern/index.php/science-gateway</a></li>
+<li><a href="https://visit.cern/" target="_blank" rel="noopener">visit.cern</a></li>
+<li><a href="https://visit.cern/index.php/discover-cern" target="_blank" rel="noopener">visit.cern/index.php/discover-cern</a></li>
+<li><a href="https://visit.cern/index.php/globe" target="_blank" rel="noopener">visit.cern/index.php/globe</a></li>
+<li><a href="https://visit.cern/node/7" target="_blank" rel="noopener">visit.cern/node/7</a></li>
+<li><a href="https://visit.cern/index.php/faq" target="_blank" rel="noopener">visit.cern/index.php/faq</a></li>
+<li><a href="https://visit.cern/hours" target="_blank" rel="noopener">visit.cern/hours</a></li>
+<li><a href="https://visit.cern/node/54552" target="_blank" rel="noopener">visit.cern/node/54552</a></li>
+<li><a href="https://visit.cern/index.php/families-individual-visitors" target="_blank" rel="noopener">visit.cern/index.php/families-individual-visitors</a></li>
+<li><a href="https://visit.cern/noonlinebooking" target="_blank" rel="noopener">visit.cern/noonlinebooking</a></li>
+<li><a href="https://visit.cern/shows" target="_blank" rel="noopener">visit.cern/shows</a></li>
+<li><a href="https://visit.cern/tours-individuals" target="_blank" rel="noopener">visit.cern/tours-individuals</a></li>
+<li><a href="https://visit.cern/lab" target="_blank" rel="noopener">visit.cern/lab</a></li>
+<li><a href="https://visit.cern/programme" target="_blank" rel="noopener">visit.cern/programme</a></li>
+<li><a href="https://visit.cern/index.php/particles-trail" target="_blank" rel="noopener">visit.cern/index.php/particles-trail</a></li>
+<li><a href="https://visit.cern/index.php/accessibility" target="_blank" rel="noopener">visit.cern/index.php/accessibility</a></li>
+<li><a href="https://visit.cern/index.php/safety" target="_blank" rel="noopener">visit.cern/index.php/safety</a></li>
+<li><a href="https://home.cern/science/accelerators/large-hadron-collider/" target="_blank" rel="noopener">home.cern/science/accelerators/large-hadron-collider</a></li>
+<li><a href="https://home.cern/science/long-shutdown-3/" target="_blank" rel="noopener">home.cern/science/long-shutdown-3</a></li>
+<li><a href="https://visit.cern/index.php/getting-here" target="_blank" rel="noopener">visit.cern/index.php/getting-here</a></li>
+<li><a href="https://www.geneve.com/en/already-here/geneva-transport-card-for-guests" target="_blank" rel="noopener">geneve.com/en/already-here/geneva-transport-card-for-guests</a></li>
+<li><a href="https://visit.cern/index.php/big-bang-cafe" target="_blank" rel="noopener">visit.cern/index.php/big-bang-cafe</a></li>
+<li><a href="https://voisins.cern/?p=1106" target="_blank" rel="noopener">voisins.cern/?p=1106</a></li>
+<li><a href="https://visit.cern/journey-through-a-detector" target="_blank" rel="noopener">visit.cern/journey-through-a-detector</a></li>
+</ul>
+<h3>Skiing</h3>
+<ul>
+<li><a href="https://www.sbb.ch/en/travel-information/individual-needs/travelling-with-children/tickets-travelcards.html" target="_blank" rel="noopener">sbb.ch/en/travel-information/individual-needs/travelling-with-children/ticket&hellip;</a></li>
+<li><a href="https://www.sno.co.uk/ski-resort/villars/travel-villars-map/" target="_blank" rel="noopener">sno.co.uk/ski-resort/villars/travel-villars-map</a></li>
+<li><a href="https://www.tvgd.ch/en-US/villars/" target="_blank" rel="noopener">tvgd.ch/en-US/villars</a></li>
+<li><a href="https://www.skiresort.com/en/ski-resort/villars-gryon-les-diablerets/test-result/families-children/" target="_blank" rel="noopener">skiresort.com/en/ski-resort/villars-gryon-les-diablerets/test-result/families&hellip;</a></li>
+<li><a href="https://ess-villars.ch/fr/cours/jardin-des-neiges/" target="_blank" rel="noopener">ess-villars.ch/fr/cours/jardin-des-neiges</a></li>
+<li><a href="https://www.skiinfo.fr/lac-leman/villars-gryon/station-de-ski" target="_blank" rel="noopener">skiinfo.fr/lac-leman/villars-gryon/station-de-ski</a></li>
+<li><a href="https://eba-eurobus.com/en/winter-regular-line/geneva-flaine" target="_blank" rel="noopener">eba-eurobus.com/en/winter-regular-line/geneva-flaine</a></li>
+<li><a href="https://www.flaine.com/en/fiche/eba-eurobus/" target="_blank" rel="noopener">flaine.com/en/fiche/eba-eurobus</a></li>
+<li><a href="https://www.flaine.com/en/getting-to-flaine/" target="_blank" rel="noopener">flaine.com/en/getting-to-flaine</a></li>
+<li><a href="https://www.flaine.com/en/a-family-friendly-resort/" target="_blank" rel="noopener">flaine.com/en/a-family-friendly-resort</a></li>
+<li><a href="https://www.flaine.com/en/skipasses/" target="_blank" rel="noopener">flaine.com/en/skipasses</a></li>
+<li><a href="https://guide-ski.fr/stations-de-ski-france/flaine-hiver/" target="_blank" rel="noopener">guide-ski.fr/stations-de-ski-france/flaine-hiver</a></li>
+<li><a href="https://hautesavoiemontblanc-tourisme.com/en/offers/club-piou-piou-flaine-en-5834466/" target="_blank" rel="noopener">hautesavoiemontblanc-tourisme.com/en/offers/club-piou-piou-flaine-en-5834466</a></li>
+<li><a href="https://www.alps2alps.com/geneva-airport/gva-transfer-to-les-houches/" target="_blank" rel="noopener">alps2alps.com/geneva-airport/gva-transfer-to-les-houches</a></li>
+<li><a href="https://www.esf-leshouches.com/petits/club-pioupiou-3-4-ans/" target="_blank" rel="noopener">esf-leshouches.com/petits/club-pioupiou-3-4-ans</a></li>
+<li><a href="https://en.chamonix.com/things-to-see-and-do/sports-and-outdoor/skiing-in-chamonix-mont-blanc-valley/list-of-ski-areas/les-houches-saint-gervais-ski-area" target="_blank" rel="noopener">en.chamonix.com/things-to-see-and-do/sports-and-outdoor/skiing-in-chamonix-mo&hellip;</a></li>
+<li><a href="https://www.esf-leshouches.com/conseils/choisir-forfait/" target="_blank" rel="noopener">esf-leshouches.com/conseils/choisir-forfait</a></li>
+<li><a href="https://www.skiinfo.fr/alpes-du-nord/les-houches/station-de-ski" target="_blank" rel="noopener">skiinfo.fr/alpes-du-nord/les-houches/station-de-ski</a></li>
+<li><a href="https://www.montsdugenevois.com/en/things-to-see-and-do/leisure-activities/prarion-sledging-area-les-houches-en-5312608/" target="_blank" rel="noopener">montsdugenevois.com/en/things-to-see-and-do/leisure-activities/prarion-sledgi&hellip;</a></li>
+<li><a href="https://ess-villars.ch/fr/cours/cours-prive-ski/" target="_blank" rel="noopener">ess-villars.ch/fr/cours/cours-prive-ski</a></li>
+<li><a href="https://ess-villars.ch/fr/cours/collectif-ski/" target="_blank" rel="noopener">ess-villars.ch/fr/cours/collectif-ski</a></li>
+<li><a href="https://www.esf-flaine.fr/adultes/ski-famille/" target="_blank" rel="noopener">esf-flaine.fr/adultes/ski-famille</a></li>
+<li><a href="https://www.esf-flaine.fr/cours-prives/" target="_blank" rel="noopener">esf-flaine.fr/cours-prives</a></li>
+<li><a href="https://www.esf-leshouches.com/cours-prives/cours-prives/" target="_blank" rel="noopener">esf-leshouches.com/cours-prives/cours-prives</a></li>
+<li><a href="https://www.esf-leshouches.com/adultes/cours-ski/" target="_blank" rel="noopener">esf-leshouches.com/adultes/cours-ski</a></li>
+<li><a href="https://www.esf-flaine.fr/petits/club-piou-piou/" target="_blank" rel="noopener">esf-flaine.fr/petits/club-piou-piou</a></li>
+<li><a href="https://www.vaud.ch/en/tourism/activites/villars-swiss-ski-school-creche/" target="_blank" rel="noopener">vaud.ch/en/tourism/activites/villars-swiss-ski-school-creche</a></li>
+<li><a href="https://www.flaine.com/en/childcare/" target="_blank" rel="noopener">flaine.com/en/childcare</a></li>
+<li><a href="https://www.esf-leshouches.com/enfants/ski-garderie/" target="_blank" rel="noopener">esf-leshouches.com/enfants/ski-garderie</a></li>
+<li><a href="https://www.leshouches.fr/wp-content/uploads/2025/10/reglement-interieur-GT-francais-2025-2026.pdf" target="_blank" rel="noopener">leshouches.fr/wp-content/uploads/2025/10/reglement-interieur-GT-francais-2025&hellip;</a></li>
+<li><a href="https://www.manawa.com/en-GB/activity/france/chamonix-mont-blanc/ski-rental/adult-ski-rental-in-les-houches-31-place-de-la-fruitire-tlphrique-ehslr/15786" target="_blank" rel="noopener">manawa.com/en-GB/activity/france/chamonix-mont-blanc/ski-rental/adult-ski-ren&hellip;</a></li>
+<li><a href="https://www.manawa.com/fr-FR/activite/france/chamonix-mont-blanc/location-de-skis/location-de-skis-enfants-les-houches-31-place-de-la-fruitire-tlphrique-flssfm/15788" target="_blank" rel="noopener">manawa.com/fr-FR/activite/france/chamonix-mont-blanc/location-de-skis/locatio&hellip;</a></li>
+<li><a href="https://www.tvgd.ch/en-US/luge-villars/" target="_blank" rel="noopener">tvgd.ch/en-US/luge-villars</a></li>
+<li><a href="https://www.tvgd.ch/en-US/pricing/" target="_blank" rel="noopener">tvgd.ch/en-US/pricing</a></li>
+<li><a href="https://en.chamonix.com/le-ski-aux-houches" target="_blank" rel="noopener">en.chamonix.com/le-ski-aux-houches</a></li>
+<li><a href="https://tc.copernicus.org/articles/16/863/2022/" target="_blank" rel="noopener">tc.copernicus.org/articles/16/863/2022</a></li>
+<li><a href="https://www.banquedesterritoires.fr/le-calendrier-scolaire-2027-2028-publie-au-journal-officiel" target="_blank" rel="noopener">banquedesterritoires.fr/le-calendrier-scolaire-2027-2028-publie-au-journal-of&hellip;</a></li>
+<li><a href="https://www.ge.ch/vacances-scolaires-jours-feries/vacances-scolaires-2027-2028" target="_blank" rel="noopener">ge.ch/vacances-scolaires-jours-feries/vacances-scolaires-2027-2028</a></li>
+<li><a href="https://ess-villars.ch/fr/categories-de-cours/cours-collectif-1-2-journee-ski/" target="_blank" rel="noopener">ess-villars.ch/fr/categories-de-cours/cours-collectif-1-2-journee-ski</a></li>
+<li><a href="https://www.skiinfo.fr/canton-de-vaud/dates-ouverture-stations" target="_blank" rel="noopener">skiinfo.fr/canton-de-vaud/dates-ouverture-stations</a></li>
+<li><a href="https://www.flaine.com/en/non-skiing-activities/snow/" target="_blank" rel="noopener">flaine.com/en/non-skiing-activities/snow</a></li>
+<li><a href="https://www.esf-flaine.fr/" target="_blank" rel="noopener">esf-flaine.fr</a></li>
+<li><a href="https://en.chamonix.com/things-to-see-and-do/sports-and-outdoor/skiing-in-chamonix-mont-blanc-valley/ski-schools/garderie-et-jardin-des-neiges-esf-les-houches" target="_blank" rel="noopener">en.chamonix.com/things-to-see-and-do/sports-and-outdoor/skiing-in-chamonix-mo&hellip;</a></li>
+</ul>
+<h3>Travelling with a small one</h3>
+<ul>
+<li><a href="https://www.tpg.ch/en/welcome-geneva" target="_blank" rel="noopener">tpg.ch/en/welcome-geneva</a></li>
+<li><a href="https://www.gva.ch/en/passengers/travel-preparation/faq" target="_blank" rel="noopener">gva.ch/en/passengers/travel-preparation/faq</a></li>
+<li><a href="https://www.tpg.ch/en/purchase/our-offers-and-good-deals/junior-and-accompanied-children-cards" target="_blank" rel="noopener">tpg.ch/en/purchase/our-offers-and-good-deals/junior-and-accompanied-children-&hellip;</a></li>
+<li><a href="https://www.cgn.ch/fr/faq" target="_blank" rel="noopener">cgn.ch/fr/faq</a></li>
+<li><a href="https://www.sbb.ch/en/travelcards-and-tickets/railpasses/junior-travelcard.html" target="_blank" rel="noopener">sbb.ch/en/travelcards-and-tickets/railpasses/junior-travelcard.html</a></li>
+<li><a href="https://www.sbb.ch/en/travelcards-and-tickets/railpasses/children-co-travelcard.html" target="_blank" rel="noopener">sbb.ch/en/travelcards-and-tickets/railpasses/children-co-travelcard.html</a></li>
+<li><a href="https://www.tour-switzerland.ch/guides/switzerland-with-baby/" target="_blank" rel="noopener">tour-switzerland.ch/guides/switzerland-with-baby</a></li>
+<li><a href="https://www.geneve.com/fr/votre-sejour/informations-touristiques/accessibilite-a-geneve" target="_blank" rel="noopener">geneve.com/fr/votre-sejour/informations-touristiques/accessibilite-a-geneve</a></li>
+<li><a href="https://silgeneve.ch/legis/program/books/RSG/htm/rsg_i1_05.htm" target="_blank" rel="noopener">silgeneve.ch/legis/program/books/RSG/htm/rsg_i1_05.htm</a></li>
+<li><a href="https://switzerlanding.com/closed-on-sundays/" target="_blank" rel="noopener">switzerlanding.com/closed-on-sundays</a></li>
+<li><a href="https://www.sbb.ch/en/travel-information/stations/find-station/station.1026.geneva-airport.html" target="_blank" rel="noopener">sbb.ch/en/travel-information/stations/find-station/station.1026.geneva-airpor&hellip;</a></li>
+<li><a href="https://lorenzigo.com/geneva-with-kids-family-guide/" target="_blank" rel="noopener">lorenzigo.com/geneva-with-kids-family-guide</a></li>
+<li><a href="https://www.hug.ch/pharmacie/service-garde" target="_blank" rel="noopener">hug.ch/pharmacie/service-garde</a></li>
+<li><a href="https://indico.un.org/event/1010242/attachments/20511/58546/emergencies.pdf" target="_blank" rel="noopener">indico.un.org/event/1010242/attachments/20511/58546/emergencies.pdf</a></li>
+<li><a href="https://www.geneve.com/en/plan-stay/practical-info/public-fountains" target="_blank" rel="noopener">geneve.com/en/plan-stay/practical-info/public-fountains</a></li>
+<li><a href="https://www.ge-soif.ch/" target="_blank" rel="noopener">ge-soif.ch</a></li>
+<li><a href="https://media.sig-ge.ch/documents/particuliers/eau/bilan_eau_potable_en.pdf" target="_blank" rel="noopener">media.sig-ge.ch/documents/particuliers/eau/bilan_eau_potable_en.pdf</a></li>
+<li><a href="https://geneve.com/en/plan-stay/practical-info/public-toilets" target="_blank" rel="noopener">geneve.com/en/plan-stay/practical-info/public-toilets</a></li>
+<li><a href="https://opendata.swiss/en/dataset/ville-ge-wc-publics" target="_blank" rel="noopener">opendata.swiss/en/dataset/ville-ge-wc-publics</a></li>
+<li><a href="https://www.geneve.ch/place-jeux-parc-grange" target="_blank" rel="noopener">geneve.ch/place-jeux-parc-grange</a></li>
+<li><a href="https://www.geneve.ch/pataugeoires" target="_blank" rel="noopener">geneve.ch/pataugeoires</a></li>
+<li><a href="https://www.geneve.ch/promenade-bastions" target="_blank" rel="noopener">geneve.ch/promenade-bastions</a></li>
+<li><a href="https://www.geneve.com/fr/attractions/detail/baby-plage" target="_blank" rel="noopener">geneve.com/fr/attractions/detail/baby-plage</a></li>
+<li><a href="https://www.geneve.com/en/attractions/geneva-beach" target="_blank" rel="noopener">geneve.com/en/attractions/geneva-beach</a></li>
+<li><a href="https://www.badi-info.ch/a/cologny.html" target="_blank" rel="noopener">badi-info.ch/a/cologny.html</a></li>
+<li><a href="https://www.geneve.com/en/attractions/paquis-bath-bains-des-paquis" target="_blank" rel="noopener">geneve.com/en/attractions/paquis-bath-bains-des-paquis</a></li>
+<li><a href="https://www.cagi.ch/en/practical-infos/budget-preparation/" target="_blank" rel="noopener">cagi.ch/en/practical-infos/budget-preparation</a></li>
+<li><a href="https://lorenzigo.com/best-restaurants-geneva/" target="_blank" rel="noopener">lorenzigo.com/best-restaurants-geneva</a></li>
+<li><a href="https://www.geneve.com/en/see-do/attractions/a-family-weekend-in-geneva" target="_blank" rel="noopener">geneve.com/en/see-do/attractions/a-family-weekend-in-geneva</a></li>
+<li><a href="https://littleguestcollection.com/en/magazine/geneva-with-family-our-must-see-practical-guide" target="_blank" rel="noopener">littleguestcollection.com/en/magazine/geneva-with-family-our-must-see-practic&hellip;</a></li>
+<li><a href="https://www.ch.ch/en/compulsory-child-seats/" target="_blank" rel="noopener">ch.ch/en/compulsory-child-seats</a></li>
+<li><a href="https://www.taxibambino.com/single-post/do-taxis-in-geneva-have-car-child-seats" target="_blank" rel="noopener">taxibambino.com/single-post/do-taxis-in-geneva-have-car-child-seats</a></li>
+<li><a href="https://www.telepherique-du-saleve.com/" target="_blank" rel="noopener">telepherique-du-saleve.com</a></li>
+<li><a href="https://ww2.sig-ge.ch/en/a-propos-de-sig/nous-connaitre/sites_expositions/jet_deau" target="_blank" rel="noopener">ww2.sig-ge.ch/en/a-propos-de-sig/nous-connaitre/sites_expositions/jet_deau</a></li>
+<li><a href="https://institutions.ville-geneve.ch/fr/mhn/votre-visite/museum-dhistoire-naturelle/pendant-la-fermeture/le-museum-en-pleine-evolution/" target="_blank" rel="noopener">institutions.ville-geneve.ch/fr/mhn/votre-visite/museum-dhistoire-naturelle/p&hellip;</a></li>
+<li><a href="https://www.geneve.ch/museum-histoire-naturelle" target="_blank" rel="noopener">geneve.ch/museum-histoire-naturelle</a></li>
+<li><a href="https://havebabywilltravel.com/geneva-with-kids/" target="_blank" rel="noopener">havebabywilltravel.com/geneva-with-kids</a></li>
+<li><a href="https://www.learningescapes.net/one-day-in-geneva-with-kids" target="_blank" rel="noopener">learningescapes.net/one-day-in-geneva-with-kids</a></li>
+<li><a href="https://switzerlanding.com/geneva-transport-card/" target="_blank" rel="noopener">switzerlanding.com/geneva-transport-card</a></li>
+<li><a href="https://healthyhappylife.com/switzerland-travel-with-a-toddler-10-day-itinerary-in-fall-season/" target="_blank" rel="noopener">healthyhappylife.com/switzerland-travel-with-a-toddler-10-day-itinerary-in-fa&hellip;</a></li>
+<li><a href="https://www.geneve.com/en/attractions/detail/the-jet-deau-genevas-landmark" target="_blank" rel="noopener">geneve.com/en/attractions/detail/the-jet-deau-genevas-landmark</a></li>
+<li><a href="https://www.geneve.com/en/see-do/attractions/top-10-things-to-do" target="_blank" rel="noopener">geneve.com/en/see-do/attractions/top-10-things-to-do</a></li>
+<li><a href="https://www.geneve.com/fr/attractions/detail/tours-de-la-cathedrale-saint-pierre" target="_blank" rel="noopener">geneve.com/fr/attractions/detail/tours-de-la-cathedrale-saint-pierre</a></li>
+<li><a href="https://www.geneve.ch/maison-tavel" target="_blank" rel="noopener">geneve.ch/maison-tavel</a></li>
+<li><a href="https://www.geneve.com/en/attractions/detail/maison-tavel" target="_blank" rel="noopener">geneve.com/en/attractions/detail/maison-tavel</a></li>
+<li><a href="https://aubp.ch/" target="_blank" rel="noopener">aubp.ch</a></li>
+<li><a href="https://www.geneve.com/en/attractions/detail/mouettes-genevoises" target="_blank" rel="noopener">geneve.com/en/attractions/detail/mouettes-genevoises</a></li>
+<li><a href="https://www.cgn.ch/" target="_blank" rel="noopener">cgn.ch</a></li>
+<li><a href="https://cgn.ch/fr/familles" target="_blank" rel="noopener">cgn.ch/fr/familles</a></li>
+<li><a href="https://www.cgn.ch/fr/geneva-grand-tour.html" target="_blank" rel="noopener">cgn.ch/fr/geneva-grand-tour.html</a></li>
+<li><a href="https://www.jardinbotaniquegeneve.ch/" target="_blank" rel="noopener">jardinbotaniquegeneve.ch</a></li>
+<li><a href="https://www.geneve.ch/jardin-botanique-geneve" target="_blank" rel="noopener">geneve.ch/jardin-botanique-geneve</a></li>
+<li><a href="https://www.geneve.com/fr/attractions/detail/jardin-botanique-de-geneve" target="_blank" rel="noopener">geneve.com/fr/attractions/detail/jardin-botanique-de-geneve</a></li>
+<li><a href="https://www.geneve.ch/parc-animalier-bois-batie" target="_blank" rel="noopener">geneve.ch/parc-animalier-bois-batie</a></li>
+<li><a href="https://institutions.ville-geneve.ch/fr/mhn/" target="_blank" rel="noopener">institutions.ville-geneve.ch/fr/mhn</a></li>
+<li><a href="https://www.patek.com/en/museum/the-patek-philippe-museum" target="_blank" rel="noopener">patek.com/en/museum/the-patek-philippe-museum</a></li>
+<li><a href="https://www.patek.com/en/museum/plan-your-visit" target="_blank" rel="noopener">patek.com/en/museum/plan-your-visit</a></li>
+<li><a href="https://www.ungeneva.org/en/visit" target="_blank" rel="noopener">ungeneva.org/en/visit</a></li>
+<li><a href="https://www.carouge.ch/" target="_blank" rel="noopener">carouge.ch</a></li>
+<li><a href="https://www.telepherique-du-saleve.com/infos-pratiques/tarifs/" target="_blank" rel="noopener">telepherique-du-saleve.com/infos-pratiques/tarifs</a></li>
+<li><a href="https://www.chillon.ch/" target="_blank" rel="noopener">chillon.ch</a></li>
+<li><a href="https://www.lavaux-unesco.ch/" target="_blank" rel="noopener">lavaux-unesco.ch</a></li>
+<li><a href="https://annecy-tourisme.com/" target="_blank" rel="noopener">annecy-tourisme.com</a></li>
+<li><a href="https://global.flixbus.com/bus-routes/bus-geneva-annecy" target="_blank" rel="noopener">global.flixbus.com/bus-routes/bus-geneva-annecy</a></li>
+<li><a href="https://www.chateau-gruyeres.ch/" target="_blank" rel="noopener">chateau-gruyeres.ch</a></li>
+<li><a href="https://www.chateau-gruyeres.ch/informations-pratiques/" target="_blank" rel="noopener">chateau-gruyeres.ch/informations-pratiques</a></li>
+</ul>
+<h3>Flights, weather and events</h3>
+<ul>
+<li><a href="https://www.thetrainline.com/en/train-times/zurich-airport-to-geneva" target="_blank" rel="noopener">thetrainline.com/en/train-times/zurich-airport-to-geneva</a></li>
+<li><a href="https://www.sbb.ch/en/offers/swiss-family-card" target="_blank" rel="noopener">sbb.ch/en/offers/swiss-family-card</a></li>
+<li><a href="https://www.seatmaestro.com/airlines-seating-maps/swiss/babies/" target="_blank" rel="noopener">seatmaestro.com/airlines-seating-maps/swiss/babies</a></li>
+<li><a href="https://www.alternativeairlines.com/how-far-in-advance-can-you-book-flights" target="_blank" rel="noopener">alternativeairlines.com/how-far-in-advance-can-you-book-flights</a></li>
+<li><a href="https://www.gva.ch/en/passengers/access-and-transport/trains/Venir-en-train" target="_blank" rel="noopener">gva.ch/en/passengers/access-and-transport/trains/Venir-en-train</a></li>
+<li><a href="https://www.gva.ch/en/passengers/access-and-transport/taxis" target="_blank" rel="noopener">gva.ch/en/passengers/access-and-transport/taxis</a></li>
+<li><a href="https://www.geneve.com/en/plan-stay/getting-around/free-geneva-transport-card" target="_blank" rel="noopener">geneve.com/en/plan-stay/getting-around/free-geneva-transport-card</a></li>
+<li><a href="https://www.meteoswiss.admin.ch/weather/weather-and-climate-from-a-to-z/bise.html" target="_blank" rel="noopener">meteoswiss.admin.ch/weather/weather-and-climate-from-a-to-z/bise.html</a></li>
+<li><a href="https://www.meteoswiss.admin.ch/dam/jcr:4798dc3a-cc29-4ee7-92f9-705743e2f9aa/aeronauticalclimatologicalinformationgenevalsgg.pdf" target="_blank" rel="noopener">meteoswiss.admin.ch/dam/jcr:4798dc3a-cc29-4ee7-92f9-705743e2f9aa/aeronautical&hellip;</a></li>
+<li><a href="https://seatemperature.net/lakes/water-temp-in-lake-geneva" target="_blank" rel="noopener">seatemperature.net/lakes/water-temp-in-lake-geneva</a></li>
+<li><a href="https://www.geneve.ch/actualites/cinetransat-festival-cinema-plein-geneve" target="_blank" rel="noopener">geneve.ch/actualites/cinetransat-festival-cinema-plein-geneve</a></li>
+<li><a href="https://www.badi-info.ch/a/geneve-paquis.html" target="_blank" rel="noopener">badi-info.ch/a/geneve-paquis.html</a></li>
+<li><a href="https://www.geneve.com/en/attractions/detail/paquis-bath-bains-des-paquis" target="_blank" rel="noopener">geneve.com/en/attractions/detail/paquis-bath-bains-des-paquis</a></li>
+<li><a href="https://www.letemps.ch/culture/musiques/a-geneve-la-lake-parade-a-attire-10-000-personnes-sous-la-pluie" target="_blank" rel="noopener">letemps.ch/culture/musiques/a-geneve-la-lake-parade-a-attire-10-000-personnes&hellip;</a></li>
+<li><a href="https://www.geneve.com/en/whats-on/swiss-national-day-in-geneva" target="_blank" rel="noopener">geneve.com/en/whats-on/swiss-national-day-in-geneva</a></li>
+<li><a href="https://www.geneve.com/en/events/noel-au-quai-7799477" target="_blank" rel="noopener">geneve.com/en/events/noel-au-quai-7799477</a></li>
+<li><a href="https://www.geneve.com/fr/evenements/la-fete-de-lescalade-2026" target="_blank" rel="noopener">geneve.com/fr/evenements/la-fete-de-lescalade-2026</a></li>
+<li><a href="https://www.tradefairdates.com/Montreux-Noel-M7946/Montreux.html" target="_blank" rel="noopener">tradefairdates.com/Montreux-Noel-M7946/Montreux.html</a></li>
+<li><a href="https://www.annecy-ville.fr/2026/01/geneva-lux-2026-geneve/" target="_blank" rel="noopener">annecy-ville.fr/2026/01/geneva-lux-2026-geneve</a></li>
+<li><a href="https://www.geneve.com/fr/evenements/reveillon-2026-au-bord-de-leau" target="_blank" rel="noopener">geneve.com/fr/evenements/reveillon-2026-au-bord-de-leau</a></li>
+<li><a href="https://statistique.ge.ch/tel/publications/2026/informations_statistiques/autres_themes/is_hotellerie_06_2026.pdf" target="_blank" rel="noopener">statistique.ge.ch/tel/publications/2026/informations_statistiques/autres_them&hellip;</a></li>
+<li><a href="https://www.cgn.ch/media/pdf/horaires/LNE-GE.pdf" target="_blank" rel="noopener">cgn.ch/media/pdf/horaires/LNE-GE.pdf</a></li>
+<li><a href="https://www.tradefairdates.com/Montreux-Nol-M7946/Montreux.html" target="_blank" rel="noopener">tradefairdates.com/Montreux-Nol-M7946/Montreux.html</a></li>
+<li><a href="https://www.cgn.ch/fr/geneva-tour-hiver.html" target="_blank" rel="noopener">cgn.ch/fr/geneva-tour-hiver.html</a></li>
+</ul>
+<h3>Hotels</h3>
+<ul>
+<li><a href="https://www.lareserve-geneve.com/en/" target="_blank" rel="noopener">lareserve-geneve.com/en</a></li>
+<li><a href="https://www.lareserve-geneve.com/famille/" target="_blank" rel="noopener">lareserve-geneve.com/famille</a></li>
+<li><a href="https://www.lareserve-geneve.com/offers/offre-famille/" target="_blank" rel="noopener">lareserve-geneve.com/offers/offre-famille</a></li>
+<li><a href="https://www.lareserve-geneve.com/" target="_blank" rel="noopener">lareserve-geneve.com</a></li>
+<li><a href="https://www.geneve.com/en/plan-stay/getting-around/geneva-transport-card-for-hosts" target="_blank" rel="noopener">geneve.com/en/plan-stay/getting-around/geneva-transport-card-for-hosts</a></li>
+<li><a href="https://www.eastwesthotel.ch/en/" target="_blank" rel="noopener">eastwesthotel.ch/en</a></li>
+<li><a href="https://www.eastwesthotel.ch/en/page/rooms-hotel-geneva-train-station.3758.html" target="_blank" rel="noopener">eastwesthotel.ch/en/page/rooms-hotel-geneva-train-station.3758.html</a></li>
+<li><a href="https://www.hoteledelweissgeneva.com/en/" target="_blank" rel="noopener">hoteledelweissgeneva.com/en</a></li>
+<li><a href="https://www.hoteledelweissgeneva.com/en/family-connecting-room.html" target="_blank" rel="noopener">hoteledelweissgeneva.com/en/family-connecting-room.html</a></li>
+<li><a href="https://all.accor.com/hotel/3133/index.en.shtml" target="_blank" rel="noopener">all.accor.com/hotel/3133/index.en.shtml</a></li>
+<li><a href="https://www.staykooook.com/geneva-city/" target="_blank" rel="noopener">staykooook.com/geneva-city</a></li>
+<li><a href="https://all.accor.com/hotel/9577/index.en.shtml" target="_blank" rel="noopener">all.accor.com/hotel/9577/index.en.shtml</a></li>
+</ul>
+<h3>Food and drink</h3>
+<ul>
+<li><a href="https://www.cafedusoleil.ch/" target="_blank" rel="noopener">cafedusoleil.ch</a></li>
+<li><a href="https://www.timeout.com/switzerland/restaurants/cafe-du-soleil" target="_blank" rel="noopener">timeout.com/switzerland/restaurants/cafe-du-soleil</a></li>
+<li><a href="https://www.lesarmures.ch/restaurant/" target="_blank" rel="noopener">lesarmures.ch/restaurant</a></li>
+<li><a href="https://www.timeout.com/switzerland/restaurants-and-cafes/les-armures" target="_blank" rel="noopener">timeout.com/switzerland/restaurants-and-cafes/les-armures</a></li>
+<li><a href="https://www.restaurant-hoteldeville.ch/" target="_blank" rel="noopener">restaurant-hoteldeville.ch</a></li>
+<li><a href="https://www.hoteledelweissgeneva.com/fr/edelweiss.html" target="_blank" rel="noopener">hoteledelweissgeneva.com/fr/edelweiss.html</a></li>
+<li><a href="https://www.geneve.com/fr/restaurants/restaurant-edelweiss" target="_blank" rel="noopener">geneve.com/fr/restaurants/restaurant-edelweiss</a></li>
+<li><a href="https://aubp.ch/buvette/" target="_blank" rel="noopener">aubp.ch/buvette</a></li>
+<li><a href="https://www.geneve.com/en/eat-drink/restaurants/family-friendly-restaurants" target="_blank" rel="noopener">geneve.com/en/eat-drink/restaurants/family-friendly-restaurants</a></li>
+<li><a href="https://www.geneve.com/fr/restaurants/bains-des-paquis-0" target="_blank" rel="noopener">geneve.com/fr/restaurants/bains-des-paquis-0</a></li>
+<li><a href="https://dapaolo.ch/" target="_blank" rel="noopener">dapaolo.ch</a></li>
+<li><a href="https://negociants.ch/fr/" target="_blank" rel="noopener">negociants.ch/fr</a></li>
+<li><a href="https://negociants.ch/fr/restaurant/" target="_blank" rel="noopener">negociants.ch/fr/restaurant</a></li>
+<li><a href="https://www.geneve.com/fr/restaurants/cafe-des-negociants" target="_blank" rel="noopener">geneve.com/fr/restaurants/cafe-des-negociants</a></li>
+<li><a href="https://www.cottagecafe.ch/" target="_blank" rel="noopener">cottagecafe.ch</a></li>
+<li><a href="https://www.cottagecafe.ch/fr/homepage-extended/" target="_blank" rel="noopener">cottagecafe.ch/fr/homepage-extended</a></li>
+<li><a href="https://www.uva-geneve.com/" target="_blank" rel="noopener">uva-geneve.com</a></li>
+<li><a href="https://www.barnews.ch/en/bars-lokale/uva-geneve/6692/" target="_blank" rel="noopener">barnews.ch/en/bars-lokale/uva-geneve/6692</a></li>
+<li><a href="https://indagare.com/restaurant/uva-geneve" target="_blank" rel="noopener">indagare.com/restaurant/uva-geneve</a></li>
+<li><a href="https://caveaudebacchus.ch/pages/nous-rendre-visite" target="_blank" rel="noopener">caveaudebacchus.ch/pages/nous-rendre-visite</a></li>
+<li><a href="https://www.falstaff.com/en/winebars/chez-bacchus" target="_blank" rel="noopener">falstaff.com/en/winebars/chez-bacchus</a></li>
+<li><a href="https://www.geneve.com/fr/boire-manger/bars-cafes-a-geneve/les-bars-a-vin-de-geneve" target="_blank" rel="noopener">geneve.com/fr/boire-manger/bars-cafes-a-geneve/les-bars-a-vin-de-geneve</a></li>
+<li><a href="https://www.falstaff.com/en/winebars/le-blanc-valet" target="_blank" rel="noopener">falstaff.com/en/winebars/le-blanc-valet</a></li>
+<li><a href="https://www.decanter.com/wine-travel/geneva-a-wine-lovers-guide-476745/" target="_blank" rel="noopener">decanter.com/wine-travel/geneva-a-wine-lovers-guide-476745</a></li>
+<li><a href="https://www.cavedegeneve.ch/en_GB" target="_blank" rel="noopener">cavedegeneve.ch/en_GB</a></li>
+<li><a href="https://www.geneveterroir.ch/en/node/4563" target="_blank" rel="noopener">geneveterroir.ch/en/node/4563</a></li>
+<li><a href="https://www.winetourism.com/fr/experience/decouvrir-m-vin-patrimoine-a-travers-un-5-vin-degustation-copie-geneve/" target="_blank" rel="noopener">winetourism.com/fr/experience/decouvrir-m-vin-patrimoine-a-travers-un-5-vin-d&hellip;</a></li>
+<li><a href="https://durhonechocolatier.ch/" target="_blank" rel="noopener">durhonechocolatier.ch</a></li>
+<li><a href="https://www.geneve.com/en/companies/du-rhone-chocolatier" target="_blank" rel="noopener">geneve.com/en/companies/du-rhone-chocolatier</a></li>
+<li><a href="https://www.favarger.com/pages/boutiques" target="_blank" rel="noopener">favarger.com/pages/boutiques</a></li>
+<li><a href="https://www.geneve.com/fr/attractions/detail/latelier-chocolat-favarger" target="_blank" rel="noopener">geneve.com/fr/attractions/detail/latelier-chocolat-favarger</a></li>
+<li><a href="https://www.geneve.com/fr/boutiques/chocolats-favarger" target="_blank" rel="noopener">geneve.com/fr/boutiques/chocolats-favarger</a></li>
+<li><a href="https://chocolat-auer.ch/" target="_blank" rel="noopener">chocolat-auer.ch</a></li>
+<li><a href="https://www.pascoet.com/nos-boutiques/" target="_blank" rel="noopener">pascoet.com/nos-boutiques</a></li>
+<li><a href="https://indagare.com/shop/philippe-pascoet-maitre-chocolatier-suisse" target="_blank" rel="noopener">indagare.com/shop/philippe-pascoet-maitre-chocolatier-suisse</a></li>
+<li><a href="https://www.sweetzerland.net/" target="_blank" rel="noopener">sweetzerland.net</a></li>
+<li><a href="https://www.geneve.com/en/companies/sweetzerland" target="_blank" rel="noopener">geneve.com/en/companies/sweetzerland</a></li>
+<li><a href="https://borealcoffee.ch/locations/" target="_blank" rel="noopener">borealcoffee.ch/locations</a></li>
+<li><a href="https://borealcoffee.ch/" target="_blank" rel="noopener">borealcoffee.ch</a></li>
+<li><a href="https://www.thewaytocoffee.com/geneva/" target="_blank" rel="noopener">thewaytocoffee.com/geneva</a></li>
+<li><a href="https://www.timeout.com/switzerland/restaurants-and-cafes/boreal" target="_blank" rel="noopener">timeout.com/switzerland/restaurants-and-cafes/boreal</a></li>
+<li><a href="https://www.instagram.com/birdiecoffee/" target="_blank" rel="noopener">instagram.com/birdiecoffee</a></li>
+<li><a href="https://caffeatlas.com/birdie-food-coffee-geneva" target="_blank" rel="noopener">caffeatlas.com/birdie-food-coffee-geneva</a></li>
+<li><a href="https://www.mylittlecup.ch/" target="_blank" rel="noopener">mylittlecup.ch</a></li>
+<li><a href="https://www.laclemence.ch/" target="_blank" rel="noopener">laclemence.ch</a></li>
+<li><a href="https://www.timeout.com/switzerland/restaurants-and-cafes/remor" target="_blank" rel="noopener">timeout.com/switzerland/restaurants-and-cafes/remor</a></li>
+<li><a href="https://intravel.net/en/geneva/restaurants-cafes/cafe-remor" target="_blank" rel="noopener">intravel.net/en/geneva/restaurants-cafes/cafe-remor</a></li>
+<li><a href="https://aroundus.com/p/171898352-cafe-remor" target="_blank" rel="noopener">aroundus.com/p/171898352-cafe-remor</a></li>
+<li><a href="https://whc.unesco.org/en/list/1243/" target="_blank" rel="noopener">whc.unesco.org/en/list/1243</a></li>
+<li><a href="https://www.tour-switzerland.ch/guides/geneva-to-lavaux/" target="_blank" rel="noopener">tour-switzerland.ch/guides/geneva-to-lavaux</a></li>
+</ul>
+<h3>Photographs and music</h3>
+<p class="credits">From Wikimedia Commons, under the licences shown: <a href="https://commons.wikimedia.org/wiki/File:Lake_Geneva_And_Mont_Blanc_(140455795).jpeg" target="_blank" rel="noopener">Lake Geneva And Mont Blanc (140455795).jpeg</a> &mdash; J Doll, CC BY 3.0; <a href="https://commons.wikimedia.org/wiki/File:Facade_of_Saint-Pierre_cathedral,_Geneva_20180829-1.jpg" target="_blank" rel="noopener">Facade of Saint-Pierre cathedral, Geneva 20180829-1.jpg</a> &mdash; Suicasmo, CC BY-SA 4.0; <a href="https://commons.wikimedia.org/wiki/File:CERN_Geneva_2.jpg" target="_blank" rel="noopener">CERN Geneva 2.jpg</a> &mdash; Unnerving duck, CC BY-SA 4.0; <a href="https://commons.wikimedia.org/wiki/File:At_Geneva_2024_207.jpg" target="_blank" rel="noopener">At Geneva 2024 207.jpg</a> &mdash; Mike Peel (www.mikepeel.net), CC BY-SA 4.0; <a href="https://commons.wikimedia.org/wiki/File:At_Geneva_2024_209.jpg" target="_blank" rel="noopener">At Geneva 2024 209.jpg</a> &mdash; Mike Peel (www.mikepeel.net), CC BY-SA 4.0; <a href="https://commons.wikimedia.org/wiki/File:Swiss_cheese_fondue.JPG" target="_blank" rel="noopener">Swiss cheese fondue.JPG</a> &mdash; Brücke-Osteuropa, CC0; <a href="https://commons.wikimedia.org/wiki/File:Jet_d%27eau_Geneva.jpg" target="_blank" rel="noopener">Jet d&#x27;eau Geneva.jpg</a> &mdash; Choinowski, CC BY-SA 4.0; <a href="https://commons.wikimedia.org/wiki/File:Lavaux_Switzerland.jpg" target="_blank" rel="noopener">Lavaux Switzerland.jpg</a> &mdash; Lorenz Poffet, CC BY-SA 4.0; <a href="https://commons.wikimedia.org/wiki/File:Marmite-Escalade-window.jpg" target="_blank" rel="noopener">Marmite-Escalade-window.jpg</a> &mdash; No machine-readable author provided. Schutz assumed (based on copyright claims)., CC BY-SA 3.0; <a href="https://commons.wikimedia.org/wiki/File:GenevePiscine.JPG" target="_blank" rel="noopener">GenevePiscine.JPG</a> &mdash; Pingelig, CC BY-SA 3.0; <a href="https://commons.wikimedia.org/wiki/File:Tapis_%C3%A0_skis_%C3%A0_Valloire_en_hiver_(janvier_2025).JPG" target="_blank" rel="noopener">Tapis à skis à Valloire en hiver (janvier 2025).JPG</a> &mdash; Florian Pépellin, CC BY-SA 4.0; <a href="https://commons.wikimedia.org/wiki/File:Geneve_sous_la_neige_-_panoramio_(19).jpg" target="_blank" rel="noopener">Geneve sous la neige - panoramio (19).jpg</a> &mdash; Patrick Nouhailler&#x27;s…, CC BY-SA 3.0; <a href="https://commons.wikimedia.org/wiki/File:Savoie_moored_in_Geneva.jpg" target="_blank" rel="noopener">Savoie moored in Geneva.jpg</a> &mdash; Ypsilon from Finland, CC0; <a href="https://commons.wikimedia.org/wiki/File:Col_de_Bretaye02_2016-02-06.jpg" target="_blank" rel="noopener">Col de Bretaye02 2016-02-06.jpg</a> &mdash; KlausFoehl, CC BY-SA 4.0.</p>
+<p class="credits">From each venue's or hotel's own website: Café des Négociants, Café du Soleil, Eastwest Hotel by Malone, Hotel Edelweiss (Manotel), La Réserve Genève, Novotel Genève Centre, Philippe Pascoët, Restaurant Les Armures, Stay KooooK Geneva City, Sweetzerland, UVA Genève, ibis Genève Centre Lac.</p>
+<p class="credits">Music: <em>Gymnop&eacute;die No. 2</em> by Erik Satie, played on classical guitar by Michael Laucke. Public domain, via <a href="https://commons.wikimedia.org/wiki/File:Satie_Gymnopedie_No_2_performed_by_Michael_Laucke.flac" target="_blank" rel="noopener">Wikimedia Commons</a>.</p>
+</div>
+</section>
+
+<footer>
+  <span class="sign">&Agrave; bient&ocirc;t.</span>
+  <p>Lake in July or snow in December &mdash; the city is the same, the trip is not. Your call.</p>
+</footer>
+
+<div class="player">
+  <audio id="trackAudio" loop preload="none" src="audio/gymnopedie-2.mp3"></audio>
+  <button id="trackBtn" class="player-btn" type="button" aria-pressed="false" aria-label="Play background music">
+    <span id="trackNote" aria-hidden="true">&#9834;</span><span id="trackLabel">Musique</span>
+  </button>
+</div>
+<script>
+(function(){
+  var a=document.getElementById('trackAudio'), b=document.getElementById('trackBtn'),
+      n=document.getElementById('trackNote'), l=document.getElementById('trackLabel');
+  if(!a||!b) return;
+  var TARGET=0.6, fade;
+  function up(){ clearInterval(fade); fade=setInterval(function(){
+    a.volume=Math.min(TARGET,a.volume+0.05); if(a.volume>=TARGET) clearInterval(fade);},70); }
+  function on(){ b.setAttribute('aria-pressed','true'); b.setAttribute('aria-label','Pause background music');
+    n.innerHTML='&#10074;&#10074;'; l.textContent='Pause'; }
+  function off(){ b.setAttribute('aria-pressed','false'); b.setAttribute('aria-label','Play background music');
+    n.innerHTML='&#9834;'; l.textContent='Musique'; }
+  b.addEventListener('click',function(){
+    if(a.paused){ try{a.volume=0;}catch(e){}
+      var p=a.play(); if(p&&p.then){ p.then(function(){on();up();}).catch(function(){l.textContent='Tap again';}); }
+      else { on(); up(); }
+    } else { clearInterval(fade); a.pause(); off(); }
+  });
+  a.addEventListener('pause',off); a.addEventListener('play',on);
+})();
+</script>
+
+</body>
+</html>
