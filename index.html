@@ -194,10 +194,11 @@ footer p{color:var(--ink-soft);margin:.2rem 0 0}
 
 /* music */
 .player{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:50}
-.player-btn{display:inline-flex;align-items:center;gap:.45rem;cursor:pointer;font-family:var(--display);
-  font-weight:700;font-size:.95rem;color:#fff;background:#14212B;border:2px solid var(--red);
-  padding:.48rem .95rem;box-shadow:0 6px 18px rgba(0,0,0,.3)}
-.player-btn[aria-pressed="true"]{background:var(--red)}
+.player-btn{display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;font-family:var(--display);
+  font-weight:700;font-size:1.02rem;color:#fff;background:#C8102E;border:2px solid #FFFFFF;
+  padding:.62rem 1.15rem;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.player-btn:hover{background:#A50D26}
+.player-btn[aria-pressed="true"]{background:#14212B;border-color:#C8102E}
 
 @media (max-width:760px){
   body{font-size:17.5px}
@@ -251,7 +252,7 @@ footer p{color:var(--ink-soft);margin:.2rem 0 0}
     <button type="button" data-s="summer" aria-pressed="true">Summer &middot; July</button>
     <button type="button" data-s="winter" aria-pressed="false">Early winter &middot; December</button>
   </div>
-  <p class="season-hint">Switching changes the week below and adds the ski day.</p>
+  <p class="season-hint">Switching changes the week below and adds the ski day. For the soundtrack, press <b>&#9834; Play music</b> in the bottom-right corner &mdash; browsers will not let it start on its own.</p>
   <p><a class="maplink" href="map/">See all of it on a map</a></p>
 </section>
 
@@ -898,7 +899,7 @@ footer p{color:var(--ink-soft);margin:.2rem 0 0}
 <div class="player">
   <audio id="trackAudio" loop preload="none" src="audio/gymnopedie-2.mp3"></audio>
   <button id="trackBtn" class="player-btn" type="button" aria-pressed="false" aria-label="Play background music">
-    <span id="trackNote" aria-hidden="true">&#9834;</span><span id="trackLabel">Musique</span>
+    <span id="trackNote" aria-hidden="true">&#9834;</span><span id="trackLabel">Play music</span>
   </button>
 </div>
 <script>
@@ -910,12 +911,12 @@ footer p{color:var(--ink-soft);margin:.2rem 0 0}
   function up(){ clearInterval(fade); fade=setInterval(function(){
     a.volume=Math.min(TARGET,a.volume+0.05); if(a.volume>=TARGET) clearInterval(fade);},70); }
   function on(){ b.setAttribute('aria-pressed','true'); b.setAttribute('aria-label','Pause background music');
-    n.innerHTML='&#10074;&#10074;'; l.textContent='Pause'; }
+    n.innerHTML='&#10074;&#10074;'; l.textContent='Pause music'; }
   function off(){ b.setAttribute('aria-pressed','false'); b.setAttribute('aria-label','Play background music');
-    n.innerHTML='&#9834;'; l.textContent='Musique'; }
+    n.innerHTML='&#9834;'; l.textContent='Play music'; }
   b.addEventListener('click',function(){
     if(a.paused){ try{a.volume=0;}catch(e){}
-      var p=a.play(); if(p&&p.then){ p.then(function(){on();up();}).catch(function(){l.textContent='Tap again';}); }
+      var p=a.play(); if(p&&p.then){ p.then(function(){on();up();}).catch(function(){l.textContent='Tap again to play';}); }
       else { on(); up(); }
     } else { clearInterval(fade); a.pause(); off(); }
   });
